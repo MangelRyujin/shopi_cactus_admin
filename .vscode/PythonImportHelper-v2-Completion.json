@@ -1,5 +1,37 @@
 [
     {
+        "label": "serializers",
+        "importPath": "rest_framework",
+        "description": "rest_framework",
+        "isExtraImport": true,
+        "detail": "rest_framework",
+        "documentation": {}
+    },
+    {
+        "label": "User",
+        "importPath": "apps.users.models",
+        "description": "apps.users.models",
+        "isExtraImport": true,
+        "detail": "apps.users.models",
+        "documentation": {}
+    },
+    {
+        "label": "User",
+        "importPath": "apps.users.models",
+        "description": "apps.users.models",
+        "isExtraImport": true,
+        "detail": "apps.users.models",
+        "documentation": {}
+    },
+    {
+        "label": "TokenObtainPairSerializer",
+        "importPath": "rest_framework_simplejwt.serializers",
+        "description": "rest_framework_simplejwt.serializers",
+        "isExtraImport": true,
+        "detail": "rest_framework_simplejwt.serializers",
+        "documentation": {}
+    },
+    {
         "label": "django.contrib.auth.models",
         "kind": 6,
         "isExtraImport": true,
@@ -75,14 +107,6 @@
         "documentation": {}
     },
     {
-        "label": "User",
-        "importPath": "apps.users.models",
-        "description": "apps.users.models",
-        "isExtraImport": true,
-        "detail": "apps.users.models",
-        "documentation": {}
-    },
-    {
         "label": "AppConfig",
         "importPath": "django.apps",
         "description": "django.apps",
@@ -154,6 +178,33 @@
         "importPath": "sys",
         "description": "sys",
         "detail": "sys",
+        "documentation": {}
+    },
+    {
+        "label": "UserSerializer",
+        "kind": 6,
+        "importPath": "apps.users.api.serializers.user_serializer",
+        "description": "apps.users.api.serializers.user_serializer",
+        "peekOfCode": "class UserSerializer(serializers.ModelSerializer):\n    class Meta:\n        model = User\n        fields = ('id','first_name','last_name','email','username','password')\n    def to_representation(self, instance):\n        return {\n            'id':instance.id,\n            'first_name':instance.name,\n            'last_name':instance.last_name,\n            'username':instance.username,",
+        "detail": "apps.users.api.serializers.user_serializer",
+        "documentation": {}
+    },
+    {
+        "label": "Password_SetSerializer",
+        "kind": 6,
+        "importPath": "apps.users.api.serializers.user_serializer",
+        "description": "apps.users.api.serializers.user_serializer",
+        "peekOfCode": "class Password_SetSerializer(serializers.Serializer):\n    password = serializers.CharField(max_length =128,min_length =8, write_only = True)\n    password2 = serializers.CharField(max_length =128,min_length =8, write_only = True)\n    def validate(self,data):\n        if data['password'] != data['password2']:\n            raise serializers.ValidationError({'password':'Las contraseñas son incorrectas'})\n        return data\nclass UpdateUserSerializer(serializers.ModelSerializer):\n    class Meta: \n        model = User",
+        "detail": "apps.users.api.serializers.user_serializer",
+        "documentation": {}
+    },
+    {
+        "label": "UpdateUserSerializer",
+        "kind": 6,
+        "importPath": "apps.users.api.serializers.user_serializer",
+        "description": "apps.users.api.serializers.user_serializer",
+        "peekOfCode": "class UpdateUserSerializer(serializers.ModelSerializer):\n    class Meta: \n        model = User\n        fields = ('username','email','first_name','last_name')",
+        "detail": "apps.users.api.serializers.user_serializer",
         "documentation": {}
     },
     {
