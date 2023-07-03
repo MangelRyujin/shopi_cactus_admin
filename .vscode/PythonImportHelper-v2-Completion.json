@@ -8,6 +8,30 @@
         "documentation": {}
     },
     {
+        "label": "status",
+        "importPath": "rest_framework",
+        "description": "rest_framework",
+        "isExtraImport": true,
+        "detail": "rest_framework",
+        "documentation": {}
+    },
+    {
+        "label": "viewsets",
+        "importPath": "rest_framework",
+        "description": "rest_framework",
+        "isExtraImport": true,
+        "detail": "rest_framework",
+        "documentation": {}
+    },
+    {
+        "label": "User",
+        "importPath": "apps.users.models",
+        "description": "apps.users.models",
+        "isExtraImport": true,
+        "detail": "apps.users.models",
+        "documentation": {}
+    },
+    {
         "label": "User",
         "importPath": "apps.users.models",
         "description": "apps.users.models",
@@ -29,6 +53,46 @@
         "description": "rest_framework_simplejwt.serializers",
         "isExtraImport": true,
         "detail": "rest_framework_simplejwt.serializers",
+        "documentation": {}
+    },
+    {
+        "label": "UserSerializer",
+        "importPath": "apps.users.api.serializers.user_serializer",
+        "description": "apps.users.api.serializers.user_serializer",
+        "isExtraImport": true,
+        "detail": "apps.users.api.serializers.user_serializer",
+        "documentation": {}
+    },
+    {
+        "label": "Password_SetSerializer",
+        "importPath": "apps.users.api.serializers.user_serializer",
+        "description": "apps.users.api.serializers.user_serializer",
+        "isExtraImport": true,
+        "detail": "apps.users.api.serializers.user_serializer",
+        "documentation": {}
+    },
+    {
+        "label": "UpdateUserSerializer",
+        "importPath": "apps.users.api.serializers.user_serializer",
+        "description": "apps.users.api.serializers.user_serializer",
+        "isExtraImport": true,
+        "detail": "apps.users.api.serializers.user_serializer",
+        "documentation": {}
+    },
+    {
+        "label": "Response",
+        "importPath": "rest_framework.response",
+        "description": "rest_framework.response",
+        "isExtraImport": true,
+        "detail": "rest_framework.response",
+        "documentation": {}
+    },
+    {
+        "label": "action",
+        "importPath": "rest_framework.decorators",
+        "description": "rest_framework.decorators",
+        "isExtraImport": true,
+        "detail": "rest_framework.decorators",
         "documentation": {}
     },
     {
@@ -221,6 +285,15 @@
         "description": "apps.users.api.serializers.user_serializer",
         "peekOfCode": "class UpdateUserSerializer(serializers.ModelSerializer):\n    class Meta: \n        model = User\n        fields = ('username','email','first_name','last_name')",
         "detail": "apps.users.api.serializers.user_serializer",
+        "documentation": {}
+    },
+    {
+        "label": "UserViewSet",
+        "kind": 6,
+        "importPath": "apps.users.api.views.user_viewset",
+        "description": "apps.users.api.views.user_viewset",
+        "peekOfCode": "class UserViewSet(viewsets.GenericViewSet):\n    serializer_class= UserSerializer\n    def get_queryset(self,pk = None):\n        if pk is not None:\n            return self.serializer_class().Meta.model.objects.filter(id=pk).first()\n        return self.serializer_class().Meta.model.objects.all()\n    def list(self,request):\n        user = self.get_queryset(pk=None)\n        if user is not None:\n            user_serializer = self.serializer_class(user)",
+        "detail": "apps.users.api.views.user_viewset",
         "documentation": {}
     },
     {
