@@ -1,6 +1,5 @@
 
 from apps.users.api.serializers.user_serializer import UserSerializer, Password_SetSerializer, UpdateUserSerializer
-from apps.users.models import User
 from rest_framework.response import Response
 from rest_framework import status
 from rest_framework import viewsets
@@ -16,11 +15,11 @@ class UserViewSet(viewsets.GenericViewSet):
             return self.serializer_class().Meta.model.objects.filter(id=pk).first()
         return self.serializer_class().Meta.model.objects.all()
 
-    def list(self,request):
+    def list(self,request, *args, **kargs):
         
-        user = self.get_queryset(pk=None)
+        user = self.get_queryset()
         if user is not None:
-            user_serializer = self.serializer_class(user)
+            user_serializer = self.serializer_class(user,many=True)
             return Response(user_serializer.data, status = status.HTTP_200_OK)
         return Response({'error':'No existen los usuarios!'},status = status.HTTP_404_NOT_FOUND)
 

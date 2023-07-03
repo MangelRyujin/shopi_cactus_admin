@@ -1,6 +1,6 @@
 from rest_framework import serializers
 from apps.users.models import User
-from rest_framework_simplejwt.serializers import TokenObtainPairSerializer
+
 
         
 class UserSerializer(serializers.ModelSerializer):
@@ -11,7 +11,7 @@ class UserSerializer(serializers.ModelSerializer):
     def to_representation(self, instance):
         return {
             'id':instance.id,
-            'first_name':instance.name,
+            'first_name':instance.first_name,
             'last_name':instance.last_name,
             'username':instance.username,
             'email':instance.email,

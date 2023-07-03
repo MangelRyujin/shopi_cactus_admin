@@ -40,22 +40,6 @@
         "documentation": {}
     },
     {
-        "label": "User",
-        "importPath": "apps.users.models",
-        "description": "apps.users.models",
-        "isExtraImport": true,
-        "detail": "apps.users.models",
-        "documentation": {}
-    },
-    {
-        "label": "TokenObtainPairSerializer",
-        "importPath": "rest_framework_simplejwt.serializers",
-        "description": "rest_framework_simplejwt.serializers",
-        "isExtraImport": true,
-        "detail": "rest_framework_simplejwt.serializers",
-        "documentation": {}
-    },
-    {
         "label": "UserSerializer",
         "importPath": "apps.users.api.serializers.user_serializer",
         "description": "apps.users.api.serializers.user_serializer",
@@ -93,6 +77,22 @@
         "description": "rest_framework.decorators",
         "isExtraImport": true,
         "detail": "rest_framework.decorators",
+        "documentation": {}
+    },
+    {
+        "label": "DefaultRouter",
+        "importPath": "rest_framework.routers",
+        "description": "rest_framework.routers",
+        "isExtraImport": true,
+        "detail": "rest_framework.routers",
+        "documentation": {}
+    },
+    {
+        "label": "UserViewSet",
+        "importPath": "apps.users.api.views.user_viewset",
+        "description": "apps.users.api.views.user_viewset",
+        "isExtraImport": true,
+        "detail": "apps.users.api.views.user_viewset",
         "documentation": {}
     },
     {
@@ -244,6 +244,14 @@
         "documentation": {}
     },
     {
+        "label": "include",
+        "importPath": "django.urls",
+        "description": "django.urls",
+        "isExtraImport": true,
+        "detail": "django.urls",
+        "documentation": {}
+    },
+    {
         "label": "get_wsgi_application",
         "importPath": "django.core.wsgi",
         "description": "django.core.wsgi",
@@ -265,7 +273,7 @@
         "kind": 6,
         "importPath": "apps.users.api.serializers.user_serializer",
         "description": "apps.users.api.serializers.user_serializer",
-        "peekOfCode": "class UserSerializer(serializers.ModelSerializer):\n    class Meta:\n        model = User\n        fields = ('id','first_name','last_name','email','username','password')\n    def to_representation(self, instance):\n        return {\n            'id':instance.id,\n            'first_name':instance.name,\n            'last_name':instance.last_name,\n            'username':instance.username,",
+        "peekOfCode": "class UserSerializer(serializers.ModelSerializer):\n    class Meta:\n        model = User\n        fields = ('id','first_name','last_name','email','username','password')\n    def to_representation(self, instance):\n        return {\n            'id':instance.id,\n            'first_name':instance.first_name,\n            'last_name':instance.last_name,\n            'username':instance.username,",
         "detail": "apps.users.api.serializers.user_serializer",
         "documentation": {}
     },
@@ -292,8 +300,26 @@
         "kind": 6,
         "importPath": "apps.users.api.views.user_viewset",
         "description": "apps.users.api.views.user_viewset",
-        "peekOfCode": "class UserViewSet(viewsets.GenericViewSet):\n    serializer_class= UserSerializer\n    def get_queryset(self,pk = None):\n        if pk is not None:\n            return self.serializer_class().Meta.model.objects.filter(id=pk).first()\n        return self.serializer_class().Meta.model.objects.all()\n    def list(self,request):\n        user = self.get_queryset(pk=None)\n        if user is not None:\n            user_serializer = self.serializer_class(user)",
+        "peekOfCode": "class UserViewSet(viewsets.GenericViewSet):\n    serializer_class= UserSerializer\n    def get_queryset(self,pk = None):\n        if pk is not None:\n            return self.serializer_class().Meta.model.objects.filter(id=pk).first()\n        return self.serializer_class().Meta.model.objects.all()\n    def list(self,request, *args, **kargs):\n        user = self.get_queryset()\n        if user is not None:\n            user_serializer = self.serializer_class(user,many=True)",
         "detail": "apps.users.api.views.user_viewset",
+        "documentation": {}
+    },
+    {
+        "label": "router",
+        "kind": 5,
+        "importPath": "apps.users.api.routers",
+        "description": "apps.users.api.routers",
+        "peekOfCode": "router = DefaultRouter()\nrouter.register(r'admin',UserViewSet, basename = 'admin')\nurlpatterns = router.urls",
+        "detail": "apps.users.api.routers",
+        "documentation": {}
+    },
+    {
+        "label": "urlpatterns",
+        "kind": 5,
+        "importPath": "apps.users.api.routers",
+        "description": "apps.users.api.routers",
+        "peekOfCode": "urlpatterns = router.urls",
+        "detail": "apps.users.api.routers",
         "documentation": {}
     },
     {
@@ -607,7 +633,7 @@
         "kind": 5,
         "importPath": "shopi_cactus_admin.urls",
         "description": "shopi_cactus_admin.urls",
-        "peekOfCode": "urlpatterns = [\n    path('admin/', admin.site.urls),\n]",
+        "peekOfCode": "urlpatterns = [\n    path('admin/', admin.site.urls),\n    path('users/', include('apps.users.api.routers')),\n]",
         "detail": "shopi_cactus_admin.urls",
         "documentation": {}
     },
