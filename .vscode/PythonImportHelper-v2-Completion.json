@@ -179,7 +179,7 @@
         "kind": 6,
         "importPath": "apps.users.models",
         "description": "apps.users.models",
-        "peekOfCode": "class User(AbstractUser):\n    email = models.EmailField('Correo Electrónico', max_length=255 , unique=True, blank = False, null= False)\n    class Meta:    \n        verbose_name = 'User'\n        verbose_name_plural = 'Users'\n    USERNAME_FIELD = 'username'\n    REQUIRED_FIELDS = ['email', 'name','last_name']\n    def natural_key(self):\n        return (self.username)\n    def __str__(self) -> str:",
+        "peekOfCode": "class User(AbstractUser):\n    email = models.EmailField('Correo Electrónico', max_length=255 , unique=True, blank = False, null= False)\n    class Meta:    \n        verbose_name = 'User'\n        verbose_name_plural = 'Users'\n    USERNAME_FIELD = 'username'\n    REQUIRED_FIELDS = ['email','first_name','last_name']\n    def natural_key(self):\n        return (self.username)\n    def __str__(self) -> str:",
         "detail": "apps.users.models",
         "documentation": {}
     },
