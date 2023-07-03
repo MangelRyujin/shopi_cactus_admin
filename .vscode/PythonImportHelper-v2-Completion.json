@@ -118,7 +118,7 @@
         "kind": 6,
         "importPath": "apps.users.apps",
         "description": "apps.users.apps",
-        "peekOfCode": "class UsersConfig(AppConfig):\n    default_auto_field = 'django.db.models.BigAutoField'\n    name = 'users'",
+        "peekOfCode": "class UsersConfig(AppConfig):\n    default_auto_field = 'django.db.models.BigAutoField'\n    name = 'apps.users'",
         "detail": "apps.users.apps",
         "documentation": {}
     },
@@ -136,7 +136,7 @@
         "kind": 5,
         "importPath": "shopi_cactus_admin.settings.base",
         "description": "shopi_cactus_admin.settings.base",
-        "peekOfCode": "BASE_DIR = Path(__file__).resolve().parent.parent\n# Quick-start development settings - unsuitable for production\n# See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/\n# SECURITY WARNING: keep the secret key used in production secret!\nSECRET_KEY = 'django-insecure-)p=(q$j!9svb3_5x2ed@lgclw9fnyci!g64hj=cq@ptth!194@'\n# SECURITY WARNING: don't run with debug turned on in production!\nDEBUG = True\nALLOWED_HOSTS = []\n# Application definition\nINSTALLED_APPS = [",
+        "peekOfCode": "BASE_DIR = Path(__file__).resolve().parent.parent\n# Quick-start development settings - unsuitable for production\n# See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/\n# SECURITY WARNING: keep the secret key used in production secret!\nSECRET_KEY = 'django-insecure-)p=(q$j!9svb3_5x2ed@lgclw9fnyci!g64hj=cq@ptth!194@'\n# SECURITY WARNING: don't run with debug turned on in production!\nDEBUG = True\nALLOWED_HOSTS = []\n# Application definition\nBASE_APPS = [",
         "detail": "shopi_cactus_admin.settings.base",
         "documentation": {}
     },
@@ -145,7 +145,7 @@
         "kind": 5,
         "importPath": "shopi_cactus_admin.settings.base",
         "description": "shopi_cactus_admin.settings.base",
-        "peekOfCode": "SECRET_KEY = 'django-insecure-)p=(q$j!9svb3_5x2ed@lgclw9fnyci!g64hj=cq@ptth!194@'\n# SECURITY WARNING: don't run with debug turned on in production!\nDEBUG = True\nALLOWED_HOSTS = []\n# Application definition\nINSTALLED_APPS = [\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',\n    'django.contrib.sessions',",
+        "peekOfCode": "SECRET_KEY = 'django-insecure-)p=(q$j!9svb3_5x2ed@lgclw9fnyci!g64hj=cq@ptth!194@'\n# SECURITY WARNING: don't run with debug turned on in production!\nDEBUG = True\nALLOWED_HOSTS = []\n# Application definition\nBASE_APPS = [\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',\n    'django.contrib.sessions',",
         "detail": "shopi_cactus_admin.settings.base",
         "documentation": {}
     },
@@ -154,7 +154,7 @@
         "kind": 5,
         "importPath": "shopi_cactus_admin.settings.base",
         "description": "shopi_cactus_admin.settings.base",
-        "peekOfCode": "DEBUG = True\nALLOWED_HOSTS = []\n# Application definition\nINSTALLED_APPS = [\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',\n    'django.contrib.sessions',\n    'django.contrib.messages',\n    'django.contrib.staticfiles',",
+        "peekOfCode": "DEBUG = True\nALLOWED_HOSTS = []\n# Application definition\nBASE_APPS = [\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',\n    'django.contrib.sessions',\n    'django.contrib.messages',\n    'django.contrib.staticfiles',",
         "detail": "shopi_cactus_admin.settings.base",
         "documentation": {}
     },
@@ -163,7 +163,34 @@
         "kind": 5,
         "importPath": "shopi_cactus_admin.settings.base",
         "description": "shopi_cactus_admin.settings.base",
-        "peekOfCode": "ALLOWED_HOSTS = []\n# Application definition\nINSTALLED_APPS = [\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',\n    'django.contrib.sessions',\n    'django.contrib.messages',\n    'django.contrib.staticfiles',\n]",
+        "peekOfCode": "ALLOWED_HOSTS = []\n# Application definition\nBASE_APPS = [\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',\n    'django.contrib.sessions',\n    'django.contrib.messages',\n    'django.contrib.staticfiles',\n]",
+        "detail": "shopi_cactus_admin.settings.base",
+        "documentation": {}
+    },
+    {
+        "label": "BASE_APPS",
+        "kind": 5,
+        "importPath": "shopi_cactus_admin.settings.base",
+        "description": "shopi_cactus_admin.settings.base",
+        "peekOfCode": "BASE_APPS = [\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',\n    'django.contrib.sessions',\n    'django.contrib.messages',\n    'django.contrib.staticfiles',\n]\nLOCAL_APPS = [\n    'apps.users',",
+        "detail": "shopi_cactus_admin.settings.base",
+        "documentation": {}
+    },
+    {
+        "label": "LOCAL_APPS",
+        "kind": 5,
+        "importPath": "shopi_cactus_admin.settings.base",
+        "description": "shopi_cactus_admin.settings.base",
+        "peekOfCode": "LOCAL_APPS = [\n    'apps.users',\n]\nTHIRD_APPS = [\n    'rest_framework',\n]\nINSTALLED_APPS = BASE_APPS + LOCAL_APPS + THIRD_APPS\nMIDDLEWARE = [\n    'django.middleware.security.SecurityMiddleware',\n    'django.contrib.sessions.middleware.SessionMiddleware',",
+        "detail": "shopi_cactus_admin.settings.base",
+        "documentation": {}
+    },
+    {
+        "label": "THIRD_APPS",
+        "kind": 5,
+        "importPath": "shopi_cactus_admin.settings.base",
+        "description": "shopi_cactus_admin.settings.base",
+        "peekOfCode": "THIRD_APPS = [\n    'rest_framework',\n]\nINSTALLED_APPS = BASE_APPS + LOCAL_APPS + THIRD_APPS\nMIDDLEWARE = [\n    'django.middleware.security.SecurityMiddleware',\n    'django.contrib.sessions.middleware.SessionMiddleware',\n    'django.middleware.common.CommonMiddleware',\n    'django.middleware.csrf.CsrfViewMiddleware',\n    'django.contrib.auth.middleware.AuthenticationMiddleware',",
         "detail": "shopi_cactus_admin.settings.base",
         "documentation": {}
     },
@@ -172,7 +199,7 @@
         "kind": 5,
         "importPath": "shopi_cactus_admin.settings.base",
         "description": "shopi_cactus_admin.settings.base",
-        "peekOfCode": "INSTALLED_APPS = [\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',\n    'django.contrib.sessions',\n    'django.contrib.messages',\n    'django.contrib.staticfiles',\n]\nMIDDLEWARE = [\n    'django.middleware.security.SecurityMiddleware',",
+        "peekOfCode": "INSTALLED_APPS = BASE_APPS + LOCAL_APPS + THIRD_APPS\nMIDDLEWARE = [\n    'django.middleware.security.SecurityMiddleware',\n    'django.contrib.sessions.middleware.SessionMiddleware',\n    'django.middleware.common.CommonMiddleware',\n    'django.middleware.csrf.CsrfViewMiddleware',\n    'django.contrib.auth.middleware.AuthenticationMiddleware',\n    'django.contrib.messages.middleware.MessageMiddleware',\n    'django.middleware.clickjacking.XFrameOptionsMiddleware',\n]",
         "detail": "shopi_cactus_admin.settings.base",
         "documentation": {}
     },
@@ -226,7 +253,7 @@
         "kind": 5,
         "importPath": "shopi_cactus_admin.settings.base",
         "description": "shopi_cactus_admin.settings.base",
-        "peekOfCode": "LANGUAGE_CODE = 'en-us'\nTIME_ZONE = 'UTC'\nUSE_I18N = True\nUSE_TZ = True\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/4.2/howto/static-files/\nSTATIC_URL = 'static/'\n# Default primary key field type\n# https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'",
+        "peekOfCode": "LANGUAGE_CODE = 'en-us'\nTIME_ZONE = 'UTC'\nUSE_I18N = True\nUSE_TZ = True\nAUTH_USER_MODEL = 'users.User'\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/4.2/howto/static-files/\nSTATIC_URL = 'static/'\n# Default primary key field type\n# https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field",
         "detail": "shopi_cactus_admin.settings.base",
         "documentation": {}
     },
@@ -235,7 +262,7 @@
         "kind": 5,
         "importPath": "shopi_cactus_admin.settings.base",
         "description": "shopi_cactus_admin.settings.base",
-        "peekOfCode": "TIME_ZONE = 'UTC'\nUSE_I18N = True\nUSE_TZ = True\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/4.2/howto/static-files/\nSTATIC_URL = 'static/'\n# Default primary key field type\n# https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'",
+        "peekOfCode": "TIME_ZONE = 'UTC'\nUSE_I18N = True\nUSE_TZ = True\nAUTH_USER_MODEL = 'users.User'\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/4.2/howto/static-files/\nSTATIC_URL = 'static/'\n# Default primary key field type\n# https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'",
         "detail": "shopi_cactus_admin.settings.base",
         "documentation": {}
     },
@@ -244,7 +271,7 @@
         "kind": 5,
         "importPath": "shopi_cactus_admin.settings.base",
         "description": "shopi_cactus_admin.settings.base",
-        "peekOfCode": "USE_I18N = True\nUSE_TZ = True\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/4.2/howto/static-files/\nSTATIC_URL = 'static/'\n# Default primary key field type\n# https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'",
+        "peekOfCode": "USE_I18N = True\nUSE_TZ = True\nAUTH_USER_MODEL = 'users.User'\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/4.2/howto/static-files/\nSTATIC_URL = 'static/'\n# Default primary key field type\n# https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'",
         "detail": "shopi_cactus_admin.settings.base",
         "documentation": {}
     },
@@ -253,7 +280,16 @@
         "kind": 5,
         "importPath": "shopi_cactus_admin.settings.base",
         "description": "shopi_cactus_admin.settings.base",
-        "peekOfCode": "USE_TZ = True\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/4.2/howto/static-files/\nSTATIC_URL = 'static/'\n# Default primary key field type\n# https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'",
+        "peekOfCode": "USE_TZ = True\nAUTH_USER_MODEL = 'users.User'\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/4.2/howto/static-files/\nSTATIC_URL = 'static/'\n# Default primary key field type\n# https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'",
+        "detail": "shopi_cactus_admin.settings.base",
+        "documentation": {}
+    },
+    {
+        "label": "AUTH_USER_MODEL",
+        "kind": 5,
+        "importPath": "shopi_cactus_admin.settings.base",
+        "description": "shopi_cactus_admin.settings.base",
+        "peekOfCode": "AUTH_USER_MODEL = 'users.User'\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/4.2/howto/static-files/\nSTATIC_URL = 'static/'\n# Default primary key field type\n# https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'",
         "detail": "shopi_cactus_admin.settings.base",
         "documentation": {}
     },
