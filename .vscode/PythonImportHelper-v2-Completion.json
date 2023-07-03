@@ -1,42 +1,18 @@
 [
     {
-        "label": "admin",
-        "importPath": "django.contrib",
-        "description": "django.contrib",
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
         "isExtraImport": true,
-        "detail": "django.contrib",
+        "detail": "django.db",
         "documentation": {}
     },
     {
-        "label": "admin",
-        "importPath": "django.contrib",
-        "description": "django.contrib",
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
         "isExtraImport": true,
-        "detail": "django.contrib",
-        "documentation": {}
-    },
-    {
-        "label": "admin",
-        "importPath": "django.contrib",
-        "description": "django.contrib",
-        "isExtraImport": true,
-        "detail": "django.contrib",
-        "documentation": {}
-    },
-    {
-        "label": "AppConfig",
-        "importPath": "django.apps",
-        "description": "django.apps",
-        "isExtraImport": true,
-        "detail": "django.apps",
-        "documentation": {}
-    },
-    {
-        "label": "AppConfig",
-        "importPath": "django.apps",
-        "description": "django.apps",
-        "isExtraImport": true,
-        "detail": "django.apps",
+        "detail": "django.db",
         "documentation": {}
     },
     {
@@ -77,6 +53,55 @@
         "description": "django.db",
         "isExtraImport": true,
         "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "django.db.models.deletion",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "django.db.models.deletion",
+        "description": "django.db.models.deletion",
+        "detail": "django.db.models.deletion",
+        "documentation": {}
+    },
+    {
+        "label": "admin",
+        "importPath": "django.contrib",
+        "description": "django.contrib",
+        "isExtraImport": true,
+        "detail": "django.contrib",
+        "documentation": {}
+    },
+    {
+        "label": "admin",
+        "importPath": "django.contrib",
+        "description": "django.contrib",
+        "isExtraImport": true,
+        "detail": "django.contrib",
+        "documentation": {}
+    },
+    {
+        "label": "admin",
+        "importPath": "django.contrib",
+        "description": "django.contrib",
+        "isExtraImport": true,
+        "detail": "django.contrib",
+        "documentation": {}
+    },
+    {
+        "label": "AppConfig",
+        "importPath": "django.apps",
+        "description": "django.apps",
+        "isExtraImport": true,
+        "detail": "django.apps",
+        "documentation": {}
+    },
+    {
+        "label": "AppConfig",
+        "importPath": "django.apps",
+        "description": "django.apps",
+        "isExtraImport": true,
+        "detail": "django.apps",
         "documentation": {}
     },
     {
@@ -309,12 +334,39 @@
         "documentation": {}
     },
     {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "apps.plants.migrations.0001_initial",
+        "description": "apps.plants.migrations.0001_initial",
+        "peekOfCode": "class Migration(migrations.Migration):\n    initial = True\n    dependencies = [\n    ]\n    operations = [\n        migrations.CreateModel(\n            name='Category',\n            fields=[\n                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),\n                ('category_name', models.CharField(max_length=255, unique=True, verbose_name='Nombre de la categoria')),",
+        "detail": "apps.plants.migrations.0001_initial",
+        "documentation": {}
+    },
+    {
         "label": "PlantsConfig",
         "kind": 6,
         "importPath": "apps.plants.apps",
         "description": "apps.plants.apps",
-        "peekOfCode": "class PlantsConfig(AppConfig):\n    default_auto_field = 'django.db.models.BigAutoField'\n    name = 'plants'",
+        "peekOfCode": "class PlantsConfig(AppConfig):\n    default_auto_field = 'django.db.models.BigAutoField'\n    name = 'apps.plants'",
         "detail": "apps.plants.apps",
+        "documentation": {}
+    },
+    {
+        "label": "Category",
+        "kind": 6,
+        "importPath": "apps.plants.models",
+        "description": "apps.plants.models",
+        "peekOfCode": "class Category(models.Model):\n    category_name = models.CharField('Nombre de la categoria', max_length=255, blank=False , null=False, unique=True)\n    # TODO: Define fields here\n    class Meta:\n        \"\"\"Meta definition for Category.\"\"\"\n        verbose_name = 'Category'\n        verbose_name_plural = 'Categorys'\n    def __str__(self):\n        \"\"\"Unicode representation of Category.\"\"\"\n        return self.category_name",
+        "detail": "apps.plants.models",
+        "documentation": {}
+    },
+    {
+        "label": "Plant",
+        "kind": 6,
+        "importPath": "apps.plants.models",
+        "description": "apps.plants.models",
+        "peekOfCode": "class Plant(models.Model):\n    \"\"\"Model definition for Pnatas.\"\"\"\n    name = models.CharField('Nombre de la planta', max_length=255, blank=False , null=False)\n    description = models.TextField('Descripcion', blank= False, null=False)\n    cost = models.DecimalField('Costo', max_digits=10,  decimal_places=2, blank= False, null= False)\n    image = models.ImageField('Imagen del producto', upload_to='plants_image/', blank=True, null=True)\n    category = models.ForeignKey(Category, on_delete=models.CASCADE, verbose_name='Category',blank=False, null= False)\n    # TODO: Define fields here\n    class Meta:\n        \"\"\"Meta definition for Plant.\"\"\"",
+        "detail": "apps.plants.models",
         "documentation": {}
     },
     {
@@ -466,7 +518,7 @@
         "kind": 5,
         "importPath": "shopi_cactus_admin.settings.base",
         "description": "shopi_cactus_admin.settings.base",
-        "peekOfCode": "LOCAL_APPS = [\n    'apps.users',\n]\nTHIRD_APPS = [\n    'rest_framework',\n]\nINSTALLED_APPS = BASE_APPS + LOCAL_APPS + THIRD_APPS\nMIDDLEWARE = [\n    'django.middleware.security.SecurityMiddleware',\n    'django.contrib.sessions.middleware.SessionMiddleware',",
+        "peekOfCode": "LOCAL_APPS = [\n    'apps.users',\n    'apps.plants'\n]\nTHIRD_APPS = [\n    'rest_framework',\n]\nINSTALLED_APPS = BASE_APPS + LOCAL_APPS + THIRD_APPS\nMIDDLEWARE = [\n    'django.middleware.security.SecurityMiddleware',",
         "detail": "shopi_cactus_admin.settings.base",
         "documentation": {}
     },
