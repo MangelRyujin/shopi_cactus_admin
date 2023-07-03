@@ -11,6 +11,6 @@ import os
 
 from django.core.wsgi import get_wsgi_application
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'shopi_cactus_admin.settings')
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'shopi_cactus_admin.settings.local')
 
 application = get_wsgi_application()
