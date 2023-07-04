@@ -32,6 +32,22 @@
         "documentation": {}
     },
     {
+        "label": "viewsets",
+        "importPath": "rest_framework",
+        "description": "rest_framework",
+        "isExtraImport": true,
+        "detail": "rest_framework",
+        "documentation": {}
+    },
+    {
+        "label": "status",
+        "importPath": "rest_framework",
+        "description": "rest_framework",
+        "isExtraImport": true,
+        "detail": "rest_framework",
+        "documentation": {}
+    },
+    {
         "label": "serializers",
         "importPath": "rest_framework",
         "description": "rest_framework",
@@ -53,6 +69,30 @@
         "description": "rest_framework",
         "isExtraImport": true,
         "detail": "rest_framework",
+        "documentation": {}
+    },
+    {
+        "label": "PlantSerializers",
+        "importPath": "apps.plants.api.serializers.plants_serializers",
+        "description": "apps.plants.api.serializers.plants_serializers",
+        "isExtraImport": true,
+        "detail": "apps.plants.api.serializers.plants_serializers",
+        "documentation": {}
+    },
+    {
+        "label": "Response",
+        "importPath": "rest_framework.response",
+        "description": "rest_framework.response",
+        "isExtraImport": true,
+        "detail": "rest_framework.response",
+        "documentation": {}
+    },
+    {
+        "label": "Response",
+        "importPath": "rest_framework.response",
+        "description": "rest_framework.response",
+        "isExtraImport": true,
+        "detail": "rest_framework.response",
         "documentation": {}
     },
     {
@@ -233,14 +273,6 @@
         "documentation": {}
     },
     {
-        "label": "Response",
-        "importPath": "rest_framework.response",
-        "description": "rest_framework.response",
-        "isExtraImport": true,
-        "detail": "rest_framework.response",
-        "documentation": {}
-    },
-    {
         "label": "action",
         "importPath": "rest_framework.decorators",
         "description": "rest_framework.decorators",
@@ -381,6 +413,15 @@
         "description": "apps.plants.api.serializers.plants_serializers",
         "peekOfCode": "class PlantSerializers(serializers.ModelSerializer):\n    class Meta:\n        model = Plant\n        fields = '__all__'\n    def to_representation(self, instance):\n        return{\n            'id': instance.id,\n            'name' : instance.name,\n            'description' : instance.description,\n            'image' : instance.image.url if instance.image != '' else '',",
         "detail": "apps.plants.api.serializers.plants_serializers",
+        "documentation": {}
+    },
+    {
+        "label": "PlantsViewSet",
+        "kind": 6,
+        "importPath": "apps.plants.api.views.plant_viewset",
+        "description": "apps.plants.api.views.plant_viewset",
+        "peekOfCode": "class PlantsViewSet(viewsets.GenericViewSet):\n    serializer_class = PlantSerializers\n    def get_queryset(self,pk = None):\n        if pk is None:\n            return self.get_serializer().Meta.model.objects.all()\n        return self.get_serializer().Meta.model.objects.filter(id = pk).first()\n    def list(self, request, *args, **kargs):\n        plants = self.get_queryset()\n        if plants.exists():\n            plants_serializers = self.serializer_class(plants,many = True)",
+        "detail": "apps.plants.api.views.plant_viewset",
         "documentation": {}
     },
     {
