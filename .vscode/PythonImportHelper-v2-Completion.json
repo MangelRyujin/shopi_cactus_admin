@@ -1,10 +1,26 @@
 [
     {
+        "label": "Category",
+        "importPath": "apps.plants.models",
+        "description": "apps.plants.models",
+        "isExtraImport": true,
+        "detail": "apps.plants.models",
+        "documentation": {}
+    },
+    {
         "label": "Plant",
         "importPath": "apps.plants.models",
         "description": "apps.plants.models",
         "isExtraImport": true,
         "detail": "apps.plants.models",
+        "documentation": {}
+    },
+    {
+        "label": "serializers",
+        "importPath": "rest_framework",
+        "description": "rest_framework",
+        "isExtraImport": true,
+        "detail": "rest_framework",
         "documentation": {}
     },
     {
@@ -347,6 +363,15 @@
         "importPath": "sys",
         "description": "sys",
         "detail": "sys",
+        "documentation": {}
+    },
+    {
+        "label": "CategoySerializers",
+        "kind": 6,
+        "importPath": "apps.plants.api.serializers.category_serializers",
+        "description": "apps.plants.api.serializers.category_serializers",
+        "peekOfCode": "class CategoySerializers(serializers.ModelSerializer):\n    class Meta:\n        model = Category\n        fields = '__all__'",
+        "detail": "apps.plants.api.serializers.category_serializers",
         "documentation": {}
     },
     {
