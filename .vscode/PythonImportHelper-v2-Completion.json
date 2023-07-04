@@ -1,5 +1,45 @@
 [
     {
+        "label": "Plant",
+        "importPath": "apps.plants.models",
+        "description": "apps.plants.models",
+        "isExtraImport": true,
+        "detail": "apps.plants.models",
+        "documentation": {}
+    },
+    {
+        "label": "serializers",
+        "importPath": "rest_framework",
+        "description": "rest_framework",
+        "isExtraImport": true,
+        "detail": "rest_framework",
+        "documentation": {}
+    },
+    {
+        "label": "serializers",
+        "importPath": "rest_framework",
+        "description": "rest_framework",
+        "isExtraImport": true,
+        "detail": "rest_framework",
+        "documentation": {}
+    },
+    {
+        "label": "status",
+        "importPath": "rest_framework",
+        "description": "rest_framework",
+        "isExtraImport": true,
+        "detail": "rest_framework",
+        "documentation": {}
+    },
+    {
+        "label": "viewsets",
+        "importPath": "rest_framework",
+        "description": "rest_framework",
+        "isExtraImport": true,
+        "detail": "rest_framework",
+        "documentation": {}
+    },
+    {
         "label": "migrations",
         "importPath": "django.db",
         "description": "django.db",
@@ -134,30 +174,6 @@
         "description": "django.shortcuts",
         "isExtraImport": true,
         "detail": "django.shortcuts",
-        "documentation": {}
-    },
-    {
-        "label": "serializers",
-        "importPath": "rest_framework",
-        "description": "rest_framework",
-        "isExtraImport": true,
-        "detail": "rest_framework",
-        "documentation": {}
-    },
-    {
-        "label": "status",
-        "importPath": "rest_framework",
-        "description": "rest_framework",
-        "isExtraImport": true,
-        "detail": "rest_framework",
-        "documentation": {}
-    },
-    {
-        "label": "viewsets",
-        "importPath": "rest_framework",
-        "description": "rest_framework",
-        "isExtraImport": true,
-        "detail": "rest_framework",
         "documentation": {}
     },
     {
@@ -331,6 +347,15 @@
         "importPath": "sys",
         "description": "sys",
         "detail": "sys",
+        "documentation": {}
+    },
+    {
+        "label": "PlantSerializers",
+        "kind": 6,
+        "importPath": "apps.plants.api.serializers.plants_serializers",
+        "description": "apps.plants.api.serializers.plants_serializers",
+        "peekOfCode": "class PlantSerializers(serializers.ModelSerializer):\n    class Meta:\n        model = Plant\n        fields = '__all__'\n    def to_representation(self, instance):\n        return{\n            'id': instance.id,\n            'name' : instance.name,\n            'description' : instance.description,\n            'image' : instance.image.url if instance.image != '' else '',",
+        "detail": "apps.plants.api.serializers.plants_serializers",
         "documentation": {}
     },
     {
