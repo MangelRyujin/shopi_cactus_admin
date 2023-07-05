@@ -2,7 +2,7 @@ from rest_framework import serializers
 from apps.Order.models import Items_Order, Order
 
 
-class OrderSerializer(serializers.Serializer):
+class OrderSerializer(serializers.ModelSerializer):
     class Meta:
         model = Order
         fields = '__al__'
@@ -21,9 +21,9 @@ class OrderSerializer(serializers.Serializer):
                 raise serializers.ValidationError("El costo debe de ser mayor que 0")
             return value
         
-class Items_OrderSerializer(serializers.Serializer):
+class Items_OrderSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Order
+        model = Items_Order
         fields = '__all__'
         
         def to_representation(self, instance):
