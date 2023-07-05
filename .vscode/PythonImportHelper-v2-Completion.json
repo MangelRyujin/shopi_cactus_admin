@@ -1207,7 +1207,7 @@
         "kind": 5,
         "importPath": "shopi_cactus_admin.urls",
         "description": "shopi_cactus_admin.urls",
-        "peekOfCode": "urlpatterns = [\n    path('admin/', admin.site.urls),\n    path('users/', include('apps.users.api.routers')),\n    path('plants/', include('apps.plants.api.routers')),\n]",
+        "peekOfCode": "urlpatterns = [\n    path('admin/', admin.site.urls),\n    path('users/', include('apps.users.api.routers')),\n    path('plants/', include('apps.plants.api.routers')),\n    path('orders/', include('apps.Order.api.routers')),\n]",
         "detail": "shopi_cactus_admin.urls",
         "documentation": {}
     },
