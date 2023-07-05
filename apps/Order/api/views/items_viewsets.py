@@ -5,7 +5,7 @@ from rest_framework.response import Response
 from rest_framework import status
 
 
-class OrderViewSet(viewsets.GenericViewSet):
+class Items_OrderViewSet(viewsets.GenericViewSet):
     serializer_class = Items_OrderSerializer
     
     def get_queryset(self,pk = None):
