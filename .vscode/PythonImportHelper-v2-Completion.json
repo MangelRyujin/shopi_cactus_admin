@@ -64,22 +64,6 @@
         "documentation": {}
     },
     {
-        "label": "migrations",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "models",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
         "label": "models",
         "importPath": "django.db",
         "description": "django.db",
@@ -104,6 +88,14 @@
         "documentation": {}
     },
     {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
         "label": "migrations",
         "importPath": "django.db",
         "description": "django.db",
@@ -120,51 +112,27 @@
         "documentation": {}
     },
     {
-        "label": "TestCase",
-        "importPath": "django.test",
-        "description": "django.test",
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
         "isExtraImport": true,
-        "detail": "django.test",
+        "detail": "django.db",
         "documentation": {}
     },
     {
-        "label": "TestCase",
-        "importPath": "django.test",
-        "description": "django.test",
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
         "isExtraImport": true,
-        "detail": "django.test",
+        "detail": "django.db",
         "documentation": {}
     },
     {
-        "label": "TestCase",
-        "importPath": "django.test",
-        "description": "django.test",
+        "label": "Plant",
+        "importPath": "apps.plants.models",
+        "description": "apps.plants.models",
         "isExtraImport": true,
-        "detail": "django.test",
-        "documentation": {}
-    },
-    {
-        "label": "render",
-        "importPath": "django.shortcuts",
-        "description": "django.shortcuts",
-        "isExtraImport": true,
-        "detail": "django.shortcuts",
-        "documentation": {}
-    },
-    {
-        "label": "render",
-        "importPath": "django.shortcuts",
-        "description": "django.shortcuts",
-        "isExtraImport": true,
-        "detail": "django.shortcuts",
-        "documentation": {}
-    },
-    {
-        "label": "render",
-        "importPath": "django.shortcuts",
-        "description": "django.shortcuts",
-        "isExtraImport": true,
-        "detail": "django.shortcuts",
+        "detail": "apps.plants.models",
         "documentation": {}
     },
     {
@@ -181,6 +149,54 @@
         "description": "apps.plants.models",
         "isExtraImport": true,
         "detail": "apps.plants.models",
+        "documentation": {}
+    },
+    {
+        "label": "TestCase",
+        "importPath": "django.test",
+        "description": "django.test",
+        "isExtraImport": true,
+        "detail": "django.test",
+        "documentation": {}
+    },
+    {
+        "label": "TestCase",
+        "importPath": "django.test",
+        "description": "django.test",
+        "isExtraImport": true,
+        "detail": "django.test",
+        "documentation": {}
+    },
+    {
+        "label": "TestCase",
+        "importPath": "django.test",
+        "description": "django.test",
+        "isExtraImport": true,
+        "detail": "django.test",
+        "documentation": {}
+    },
+    {
+        "label": "render",
+        "importPath": "django.shortcuts",
+        "description": "django.shortcuts",
+        "isExtraImport": true,
+        "detail": "django.shortcuts",
+        "documentation": {}
+    },
+    {
+        "label": "render",
+        "importPath": "django.shortcuts",
+        "description": "django.shortcuts",
+        "isExtraImport": true,
+        "detail": "django.shortcuts",
+        "documentation": {}
+    },
+    {
+        "label": "render",
+        "importPath": "django.shortcuts",
+        "description": "django.shortcuts",
+        "isExtraImport": true,
+        "detail": "django.shortcuts",
         "documentation": {}
     },
     {
@@ -500,6 +516,24 @@
         "description": "apps.Order.apps",
         "peekOfCode": "class OrderConfig(AppConfig):\n    default_auto_field = 'django.db.models.BigAutoField'\n    name = 'Order'",
         "detail": "apps.Order.apps",
+        "documentation": {}
+    },
+    {
+        "label": "Order",
+        "kind": 6,
+        "importPath": "apps.Order.models",
+        "description": "apps.Order.models",
+        "peekOfCode": "class Order(models.Model):\n    \"\"\"Model definition for Order.\"\"\"\n    first_name = models.CharField('Nombre', max_length=255, blank=True, null=True)\n    last_name = models.CharField('Apellidos', max_length=255, blank=True, null=True)\n    email = models.EmailField('Correo Electrónico', max_length=255 , unique=False, blank = False, null= False)\n    cost = models.DecimalField('Costo', max_digits=10,  decimal_places=2, blank= False, null= False)\n    # TODO: Define fields here\n    class Meta:\n        \"\"\"Meta definition for Order.\"\"\"\n        verbose_name = 'Order'",
+        "detail": "apps.Order.models",
+        "documentation": {}
+    },
+    {
+        "label": "Items_Order",
+        "kind": 6,
+        "importPath": "apps.Order.models",
+        "description": "apps.Order.models",
+        "peekOfCode": "class Items_Order(models.Model):\n    plant = models.ForeignKey(Plant, on_delete=models.CASCADE, verbose_name='Plant',blank=False, null= False)\n    order= models.ForeignKey(Order, on_delete=models.CASCADE, verbose_name='Order',blank=False, null= False)\n    cost = models.DecimalField('Costo', max_digits=10,  decimal_places=2, blank= False, null= False)\n    qty = models.PositiveIntegerField('Quantity', default= 1 ,blank= False, null= False  )\n    class Meta:\n        \"\"\"Meta definition for Items Order.\"\"\"\n        verbose_name = 'Item Order'\n        verbose_name_plural = 'Items Order'\n    def __str__(self):",
+        "detail": "apps.Order.models",
         "documentation": {}
     },
     {
