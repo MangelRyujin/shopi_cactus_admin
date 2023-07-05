@@ -8,6 +8,22 @@
         "documentation": {}
     },
     {
+        "label": "viewsets",
+        "importPath": "rest_framework",
+        "description": "rest_framework",
+        "isExtraImport": true,
+        "detail": "rest_framework",
+        "documentation": {}
+    },
+    {
+        "label": "status",
+        "importPath": "rest_framework",
+        "description": "rest_framework",
+        "isExtraImport": true,
+        "detail": "rest_framework",
+        "documentation": {}
+    },
+    {
         "label": "serializers",
         "importPath": "rest_framework",
         "description": "rest_framework",
@@ -93,6 +109,54 @@
         "description": "apps.Order.models",
         "isExtraImport": true,
         "detail": "apps.Order.models",
+        "documentation": {}
+    },
+    {
+        "label": "Order",
+        "importPath": "apps.Order.models",
+        "description": "apps.Order.models",
+        "isExtraImport": true,
+        "detail": "apps.Order.models",
+        "documentation": {}
+    },
+    {
+        "label": "OrderSerializer",
+        "importPath": "apps.Order.api.serializers.order_serializers",
+        "description": "apps.Order.api.serializers.order_serializers",
+        "isExtraImport": true,
+        "detail": "apps.Order.api.serializers.order_serializers",
+        "documentation": {}
+    },
+    {
+        "label": "Response",
+        "importPath": "rest_framework.response",
+        "description": "rest_framework.response",
+        "isExtraImport": true,
+        "detail": "rest_framework.response",
+        "documentation": {}
+    },
+    {
+        "label": "Response",
+        "importPath": "rest_framework.response",
+        "description": "rest_framework.response",
+        "isExtraImport": true,
+        "detail": "rest_framework.response",
+        "documentation": {}
+    },
+    {
+        "label": "Response",
+        "importPath": "rest_framework.response",
+        "description": "rest_framework.response",
+        "isExtraImport": true,
+        "detail": "rest_framework.response",
+        "documentation": {}
+    },
+    {
+        "label": "Response",
+        "importPath": "rest_framework.response",
+        "description": "rest_framework.response",
+        "isExtraImport": true,
+        "detail": "rest_framework.response",
         "documentation": {}
     },
     {
@@ -345,30 +409,6 @@
         "documentation": {}
     },
     {
-        "label": "Response",
-        "importPath": "rest_framework.response",
-        "description": "rest_framework.response",
-        "isExtraImport": true,
-        "detail": "rest_framework.response",
-        "documentation": {}
-    },
-    {
-        "label": "Response",
-        "importPath": "rest_framework.response",
-        "description": "rest_framework.response",
-        "isExtraImport": true,
-        "detail": "rest_framework.response",
-        "documentation": {}
-    },
-    {
-        "label": "Response",
-        "importPath": "rest_framework.response",
-        "description": "rest_framework.response",
-        "isExtraImport": true,
-        "detail": "rest_framework.response",
-        "documentation": {}
-    },
-    {
         "label": "PlantSerializers",
         "importPath": "apps.plants.api.serializers.plants_serializers",
         "description": "apps.plants.api.serializers.plants_serializers",
@@ -581,6 +621,15 @@
         "description": "apps.Order.api.serializers.order_serializers",
         "peekOfCode": "class Items_OrderSerializer(serializers.Serializer):\n    class Meta:\n        model = Order\n        fields = '__all__'\n        def to_representation(self, instance):\n            return{\n                'plant': instance.plant,\n                'order': instance.order,\n                'cost': instance.cost,\n                'qty': instance.qty,",
         "detail": "apps.Order.api.serializers.order_serializers",
+        "documentation": {}
+    },
+    {
+        "label": "OrderViewSet",
+        "kind": 6,
+        "importPath": "apps.Order.api.views.order_viewsets",
+        "description": "apps.Order.api.views.order_viewsets",
+        "peekOfCode": "class OrderViewSet(viewsets.GenericViewSet):\n    serializer_class = OrderSerializer\n    def get_queryset(self,pk = None):\n        if pk is not None:\n            return self.get_serializer().Meta.model.objects.all()\n        return self.get_serializer().Meta.model.objects.filter(id = pk).first()\n    def list(self,request, *args,**kargs):\n        orders = self.get_queryset()\n        if orders.exists():\n            orders_serializers = self.serializer_class(orders, many = True)",
+        "detail": "apps.Order.api.views.order_viewsets",
         "documentation": {}
     },
     {
