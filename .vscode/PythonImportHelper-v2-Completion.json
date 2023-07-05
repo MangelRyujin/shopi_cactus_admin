@@ -676,7 +676,7 @@
         "kind": 6,
         "importPath": "apps.Order.api.views.items_viewsets",
         "description": "apps.Order.api.views.items_viewsets",
-        "peekOfCode": "class Items_OrderViewSet(viewsets.GenericViewSet):\n    serializer_class = Items_OrderSerializer\n    def get_queryset(self,pk = None):\n        if pk is not None:\n            return self.get_serializer().Meta.model.objects.all()\n        return self.get_serializer().Meta.model.objects.filter(id = pk).first()\n    def list(self,request, *args,**kargs):\n        items = self.get_queryset()\n        if items.exists():\n            items_serializer = self.serializer_class(items, many = True)",
+        "peekOfCode": "class Items_OrderViewSet(viewsets.GenericViewSet):\n    serializer_class = Items_OrderSerializer\n    def get_queryset(self,pk = None):\n        if pk is None:\n            return self.get_serializer().Meta.model.objects.all()\n        return self.get_serializer().Meta.model.objects.filter(id = pk).first()\n    def list(self,request, *args,**kargs):\n        items = self.get_queryset()\n        if items.exists():\n            items_serializer = self.serializer_class(items, many = True)",
         "detail": "apps.Order.api.views.items_viewsets",
         "documentation": {}
     },
@@ -685,7 +685,7 @@
         "kind": 6,
         "importPath": "apps.Order.api.views.order_viewsets",
         "description": "apps.Order.api.views.order_viewsets",
-        "peekOfCode": "class OrderViewSet(viewsets.GenericViewSet):\n    serializer_class = OrderSerializer\n    def get_queryset(self,pk = None):\n        if pk is not None:\n            return self.get_serializer().Meta.model.objects.all()\n        return self.get_serializer().Meta.model.objects.filter(id = pk).first()\n    def list(self,request, *args,**kargs):\n        orders = self.get_queryset()\n        if orders.exists():\n            orders_serializers = self.serializer_class(orders, many = True)",
+        "peekOfCode": "class OrderViewSet(viewsets.GenericViewSet):\n    serializer_class = OrderSerializer\n    def get_queryset(self,pk = None):\n        if pk is None:\n            return self.get_serializer().Meta.model.objects.all()\n        return self.get_serializer().Meta.model.objects.filter(id = pk).first()\n    def list(self,request, *args,**kargs):\n        orders = self.get_queryset()\n        if orders.exists():\n            orders_serializers = self.serializer_class(orders, many = True)",
         "detail": "apps.Order.api.views.order_viewsets",
         "documentation": {}
     },
