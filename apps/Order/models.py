@@ -11,6 +11,7 @@ from apps.plants.models import Plant
 
 class Order(models.Model):
     """Model definition for Order."""
+    user_id = models.PositiveIntegerField('Id de usuario',blank=False, null=False)
     first_name = models.CharField('Nombre', max_length=255, blank=True, null=True)
     last_name = models.CharField('Apellidos', max_length=255, blank=True, null=True)
     email = models.EmailField('Correo Electrónico', max_length=255 , unique=False, blank = False, null= False)

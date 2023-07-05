@@ -16,6 +16,22 @@
         "documentation": {}
     },
     {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
         "label": "models",
         "importPath": "django.db",
         "description": "django.db",
@@ -535,6 +551,15 @@
         "documentation": {}
     },
     {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "apps.Order.migrations.0002_order_user_id",
+        "description": "apps.Order.migrations.0002_order_user_id",
+        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('Order', '0001_initial'),\n    ]\n    operations = [\n        migrations.AddField(\n            model_name='order',\n            name='user_id',\n            field=models.PositiveIntegerField(default=0, verbose_name='Id de usuario'),\n            preserve_default=False,",
+        "detail": "apps.Order.migrations.0002_order_user_id",
+        "documentation": {}
+    },
+    {
         "label": "OrderConfig",
         "kind": 6,
         "importPath": "apps.Order.apps",
@@ -548,7 +573,7 @@
         "kind": 6,
         "importPath": "apps.Order.models",
         "description": "apps.Order.models",
-        "peekOfCode": "class Order(models.Model):\n    \"\"\"Model definition for Order.\"\"\"\n    first_name = models.CharField('Nombre', max_length=255, blank=True, null=True)\n    last_name = models.CharField('Apellidos', max_length=255, blank=True, null=True)\n    email = models.EmailField('Correo Electrónico', max_length=255 , unique=False, blank = False, null= False)\n    cost = models.DecimalField('Costo', max_digits=10,  decimal_places=2, blank= False, null= False)\n    # TODO: Define fields here\n    class Meta:\n        \"\"\"Meta definition for Order.\"\"\"\n        verbose_name = 'Order'",
+        "peekOfCode": "class Order(models.Model):\n    \"\"\"Model definition for Order.\"\"\"\n    user_id = models.PositiveIntegerField('Id de usuario',blank=False, null=False)\n    first_name = models.CharField('Nombre', max_length=255, blank=True, null=True)\n    last_name = models.CharField('Apellidos', max_length=255, blank=True, null=True)\n    email = models.EmailField('Correo Electrónico', max_length=255 , unique=False, blank = False, null= False)\n    cost = models.DecimalField('Costo', max_digits=10,  decimal_places=2, blank= False, null= False)\n    # TODO: Define fields here\n    class Meta:\n        \"\"\"Meta definition for Order.\"\"\"",
         "detail": "apps.Order.models",
         "documentation": {}
     },
