@@ -41,7 +41,7 @@ BASE_APPS = [
 
 LOCAL_APPS = [
     'apps.users',
-    'apps.plants'
+    'apps.plants',
     'apps.Order',
 ]
 

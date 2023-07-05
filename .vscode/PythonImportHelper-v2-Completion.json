@@ -1,58 +1,18 @@
 [
     {
-        "label": "admin",
-        "importPath": "django.contrib",
-        "description": "django.contrib",
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
         "isExtraImport": true,
-        "detail": "django.contrib",
+        "detail": "django.db",
         "documentation": {}
     },
     {
-        "label": "admin",
-        "importPath": "django.contrib",
-        "description": "django.contrib",
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
         "isExtraImport": true,
-        "detail": "django.contrib",
-        "documentation": {}
-    },
-    {
-        "label": "admin",
-        "importPath": "django.contrib",
-        "description": "django.contrib",
-        "isExtraImport": true,
-        "detail": "django.contrib",
-        "documentation": {}
-    },
-    {
-        "label": "admin",
-        "importPath": "django.contrib",
-        "description": "django.contrib",
-        "isExtraImport": true,
-        "detail": "django.contrib",
-        "documentation": {}
-    },
-    {
-        "label": "AppConfig",
-        "importPath": "django.apps",
-        "description": "django.apps",
-        "isExtraImport": true,
-        "detail": "django.apps",
-        "documentation": {}
-    },
-    {
-        "label": "AppConfig",
-        "importPath": "django.apps",
-        "description": "django.apps",
-        "isExtraImport": true,
-        "detail": "django.apps",
-        "documentation": {}
-    },
-    {
-        "label": "AppConfig",
-        "importPath": "django.apps",
-        "description": "django.apps",
-        "isExtraImport": true,
-        "detail": "django.apps",
+        "detail": "django.db",
         "documentation": {}
     },
     {
@@ -125,6 +85,71 @@
         "description": "django.db",
         "isExtraImport": true,
         "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "django.db.models.deletion",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "django.db.models.deletion",
+        "description": "django.db.models.deletion",
+        "detail": "django.db.models.deletion",
+        "documentation": {}
+    },
+    {
+        "label": "admin",
+        "importPath": "django.contrib",
+        "description": "django.contrib",
+        "isExtraImport": true,
+        "detail": "django.contrib",
+        "documentation": {}
+    },
+    {
+        "label": "admin",
+        "importPath": "django.contrib",
+        "description": "django.contrib",
+        "isExtraImport": true,
+        "detail": "django.contrib",
+        "documentation": {}
+    },
+    {
+        "label": "admin",
+        "importPath": "django.contrib",
+        "description": "django.contrib",
+        "isExtraImport": true,
+        "detail": "django.contrib",
+        "documentation": {}
+    },
+    {
+        "label": "admin",
+        "importPath": "django.contrib",
+        "description": "django.contrib",
+        "isExtraImport": true,
+        "detail": "django.contrib",
+        "documentation": {}
+    },
+    {
+        "label": "AppConfig",
+        "importPath": "django.apps",
+        "description": "django.apps",
+        "isExtraImport": true,
+        "detail": "django.apps",
+        "documentation": {}
+    },
+    {
+        "label": "AppConfig",
+        "importPath": "django.apps",
+        "description": "django.apps",
+        "isExtraImport": true,
+        "detail": "django.apps",
+        "documentation": {}
+    },
+    {
+        "label": "AppConfig",
+        "importPath": "django.apps",
+        "description": "django.apps",
+        "isExtraImport": true,
+        "detail": "django.apps",
         "documentation": {}
     },
     {
@@ -344,15 +369,6 @@
         "documentation": {}
     },
     {
-        "label": "django.db.models.deletion",
-        "kind": 6,
-        "isExtraImport": true,
-        "importPath": "django.db.models.deletion",
-        "description": "django.db.models.deletion",
-        "detail": "django.db.models.deletion",
-        "documentation": {}
-    },
-    {
         "label": "User",
         "importPath": "apps.users.models",
         "description": "apps.users.models",
@@ -507,6 +523,15 @@
         "importPath": "sys",
         "description": "sys",
         "detail": "sys",
+        "documentation": {}
+    },
+    {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "apps.Order.migrations.0001_initial",
+        "description": "apps.Order.migrations.0001_initial",
+        "peekOfCode": "class Migration(migrations.Migration):\n    initial = True\n    dependencies = [\n        ('plants', '0001_initial'),\n    ]\n    operations = [\n        migrations.CreateModel(\n            name='Order',\n            fields=[\n                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),",
+        "detail": "apps.Order.migrations.0001_initial",
         "documentation": {}
     },
     {
@@ -775,7 +800,7 @@
         "kind": 5,
         "importPath": "shopi_cactus_admin.settings.base",
         "description": "shopi_cactus_admin.settings.base",
-        "peekOfCode": "LOCAL_APPS = [\n    'apps.users',\n    'apps.plants'\n    'apps.Order',\n]\nTHIRD_APPS = [\n    'rest_framework',\n]\nINSTALLED_APPS = BASE_APPS + LOCAL_APPS + THIRD_APPS\nMIDDLEWARE = [",
+        "peekOfCode": "LOCAL_APPS = [\n    'apps.users',\n    'apps.plants',\n    'apps.Order',\n]\nTHIRD_APPS = [\n    'rest_framework',\n]\nINSTALLED_APPS = BASE_APPS + LOCAL_APPS + THIRD_APPS\nMIDDLEWARE = [",
         "detail": "shopi_cactus_admin.settings.base",
         "documentation": {}
     },
