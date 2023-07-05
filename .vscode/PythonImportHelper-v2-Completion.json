@@ -128,6 +128,22 @@
         "documentation": {}
     },
     {
+        "label": "Order",
+        "importPath": "apps.Order.models",
+        "description": "apps.Order.models",
+        "isExtraImport": true,
+        "detail": "apps.Order.models",
+        "documentation": {}
+    },
+    {
+        "label": "Items_Order",
+        "importPath": "apps.Order.models",
+        "description": "apps.Order.models",
+        "isExtraImport": true,
+        "detail": "apps.Order.models",
+        "documentation": {}
+    },
+    {
         "label": "Items_OrderSerializer",
         "importPath": "apps.Order.api.serializers.order_serializers",
         "description": "apps.Order.api.serializers.order_serializers",
@@ -690,7 +706,7 @@
         "kind": 6,
         "importPath": "apps.Order.api.serializers.order_serializers",
         "description": "apps.Order.api.serializers.order_serializers",
-        "peekOfCode": "class OrderSerializer(serializers.ModelSerializer):\n    class Meta:\n        model = Order\n        fields = '__al__'\n        def to_representation(self, instance):\n            return {\n                'user_id': instance.user_id,\n                'first_name': instance.first_name,\n                'last_name': instance.last_name,\n                'email': instance.email,",
+        "peekOfCode": "class OrderSerializer(serializers.ModelSerializer):\n    class Meta:\n        model = Order\n        fields = '__all__'\n        def to_representation(self, instance):\n            return {\n                'user_id': instance.user_id,\n                'first_name': instance.first_name,\n                'last_name': instance.last_name,\n                'email': instance.email,",
         "detail": "apps.Order.api.serializers.order_serializers",
         "documentation": {}
     },

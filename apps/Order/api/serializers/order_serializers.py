@@ -5,7 +5,7 @@ from apps.Order.models import Items_Order, Order
 class OrderSerializer(serializers.ModelSerializer):
     class Meta:
         model = Order
-        fields = '__al__'
+        fields = '__all__'
         
         def to_representation(self, instance):
             return {
