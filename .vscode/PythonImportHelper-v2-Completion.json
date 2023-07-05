@@ -184,6 +184,46 @@
         "documentation": {}
     },
     {
+        "label": "DefaultRouter",
+        "importPath": "rest_framework.routers",
+        "description": "rest_framework.routers",
+        "isExtraImport": true,
+        "detail": "rest_framework.routers",
+        "documentation": {}
+    },
+    {
+        "label": "DefaultRouter",
+        "importPath": "rest_framework.routers",
+        "description": "rest_framework.routers",
+        "isExtraImport": true,
+        "detail": "rest_framework.routers",
+        "documentation": {}
+    },
+    {
+        "label": "DefaultRouter",
+        "importPath": "rest_framework.routers",
+        "description": "rest_framework.routers",
+        "isExtraImport": true,
+        "detail": "rest_framework.routers",
+        "documentation": {}
+    },
+    {
+        "label": "OrderViewSet",
+        "importPath": "apps.Order.api.views.order_viewsets",
+        "description": "apps.Order.api.views.order_viewsets",
+        "isExtraImport": true,
+        "detail": "apps.Order.api.views.order_viewsets",
+        "documentation": {}
+    },
+    {
+        "label": "Items_OrderViewSet",
+        "importPath": "apps.Order.api.views.items_viewsets",
+        "description": "apps.Order.api.views.items_viewsets",
+        "isExtraImport": true,
+        "detail": "apps.Order.api.views.items_viewsets",
+        "documentation": {}
+    },
+    {
         "label": "migrations",
         "importPath": "django.db",
         "description": "django.db",
@@ -441,22 +481,6 @@
         "documentation": {}
     },
     {
-        "label": "DefaultRouter",
-        "importPath": "rest_framework.routers",
-        "description": "rest_framework.routers",
-        "isExtraImport": true,
-        "detail": "rest_framework.routers",
-        "documentation": {}
-    },
-    {
-        "label": "DefaultRouter",
-        "importPath": "rest_framework.routers",
-        "description": "rest_framework.routers",
-        "isExtraImport": true,
-        "detail": "rest_framework.routers",
-        "documentation": {}
-    },
-    {
         "label": "PlantsViewSet",
         "importPath": "apps.plants.api.views.plant_viewset",
         "description": "apps.plants.api.views.plant_viewset",
@@ -663,6 +687,24 @@
         "description": "apps.Order.api.views.order_viewsets",
         "peekOfCode": "class OrderViewSet(viewsets.GenericViewSet):\n    serializer_class = OrderSerializer\n    def get_queryset(self,pk = None):\n        if pk is not None:\n            return self.get_serializer().Meta.model.objects.all()\n        return self.get_serializer().Meta.model.objects.filter(id = pk).first()\n    def list(self,request, *args,**kargs):\n        orders = self.get_queryset()\n        if orders.exists():\n            orders_serializers = self.serializer_class(orders, many = True)",
         "detail": "apps.Order.api.views.order_viewsets",
+        "documentation": {}
+    },
+    {
+        "label": "router",
+        "kind": 5,
+        "importPath": "apps.Order.api.routers",
+        "description": "apps.Order.api.routers",
+        "peekOfCode": "router = DefaultRouter()\nrouter.register(r'order',OrderViewSet, basename = 'order')\nrouter.register(r'items_order',Items_OrderViewSet, basename = 'items_order')\nurlpatterns = router.urls",
+        "detail": "apps.Order.api.routers",
+        "documentation": {}
+    },
+    {
+        "label": "urlpatterns",
+        "kind": 5,
+        "importPath": "apps.Order.api.routers",
+        "description": "apps.Order.api.routers",
+        "peekOfCode": "urlpatterns = router.urls",
+        "detail": "apps.Order.api.routers",
         "documentation": {}
     },
     {
