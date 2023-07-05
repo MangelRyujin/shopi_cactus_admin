@@ -514,7 +514,7 @@
         "kind": 6,
         "importPath": "apps.Order.apps",
         "description": "apps.Order.apps",
-        "peekOfCode": "class OrderConfig(AppConfig):\n    default_auto_field = 'django.db.models.BigAutoField'\n    name = 'Order'",
+        "peekOfCode": "class OrderConfig(AppConfig):\n    default_auto_field = 'django.db.models.BigAutoField'\n    name = 'apps.Order'",
         "detail": "apps.Order.apps",
         "documentation": {}
     },
@@ -775,7 +775,7 @@
         "kind": 5,
         "importPath": "shopi_cactus_admin.settings.base",
         "description": "shopi_cactus_admin.settings.base",
-        "peekOfCode": "LOCAL_APPS = [\n    'apps.users',\n    'apps.plants'\n]\nTHIRD_APPS = [\n    'rest_framework',\n]\nINSTALLED_APPS = BASE_APPS + LOCAL_APPS + THIRD_APPS\nMIDDLEWARE = [\n    'django.middleware.security.SecurityMiddleware',",
+        "peekOfCode": "LOCAL_APPS = [\n    'apps.users',\n    'apps.plants'\n    'apps.Order',\n]\nTHIRD_APPS = [\n    'rest_framework',\n]\nINSTALLED_APPS = BASE_APPS + LOCAL_APPS + THIRD_APPS\nMIDDLEWARE = [",
         "detail": "shopi_cactus_admin.settings.base",
         "documentation": {}
     },
