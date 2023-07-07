@@ -104,6 +104,14 @@
         "documentation": {}
     },
     {
+        "label": "status",
+        "importPath": "rest_framework",
+        "description": "rest_framework",
+        "isExtraImport": true,
+        "detail": "rest_framework",
+        "documentation": {}
+    },
+    {
         "label": "viewsets",
         "importPath": "rest_framework",
         "description": "rest_framework",
@@ -157,6 +165,14 @@
         "description": "apps.Order.api.serializers.order_serializers",
         "isExtraImport": true,
         "detail": "apps.Order.api.serializers.order_serializers",
+        "documentation": {}
+    },
+    {
+        "label": "Response",
+        "importPath": "rest_framework.response",
+        "description": "rest_framework.response",
+        "isExtraImport": true,
+        "detail": "rest_framework.response",
         "documentation": {}
     },
     {
@@ -561,6 +577,30 @@
         "documentation": {}
     },
     {
+        "label": "api_view",
+        "importPath": "rest_framework.decorators",
+        "description": "rest_framework.decorators",
+        "isExtraImport": true,
+        "detail": "rest_framework.decorators",
+        "documentation": {}
+    },
+    {
+        "label": "action",
+        "importPath": "rest_framework.decorators",
+        "description": "rest_framework.decorators",
+        "isExtraImport": true,
+        "detail": "rest_framework.decorators",
+        "documentation": {}
+    },
+    {
+        "label": "UserSerializer",
+        "importPath": "apps.users.api.serializers.user_serializer",
+        "description": "apps.users.api.serializers.user_serializer",
+        "isExtraImport": true,
+        "detail": "apps.users.api.serializers.user_serializer",
+        "documentation": {}
+    },
+    {
         "label": "UserSerializer",
         "importPath": "apps.users.api.serializers.user_serializer",
         "description": "apps.users.api.serializers.user_serializer",
@@ -582,14 +622,6 @@
         "description": "apps.users.api.serializers.user_serializer",
         "isExtraImport": true,
         "detail": "apps.users.api.serializers.user_serializer",
-        "documentation": {}
-    },
-    {
-        "label": "action",
-        "importPath": "rest_framework.decorators",
-        "description": "rest_framework.decorators",
-        "isExtraImport": true,
-        "detail": "rest_framework.decorators",
         "documentation": {}
     },
     {
@@ -644,6 +676,14 @@
         "documentation": {}
     },
     {
+        "label": "ValidationError",
+        "importPath": "django.core.exceptions",
+        "description": "django.core.exceptions",
+        "isExtraImport": true,
+        "detail": "django.core.exceptions",
+        "documentation": {}
+    },
+    {
         "label": "Path",
         "importPath": "pathlib",
         "description": "pathlib",
@@ -682,6 +722,14 @@
         "description": "django.urls",
         "isExtraImport": true,
         "detail": "django.urls",
+        "documentation": {}
+    },
+    {
+        "label": "create_client_api_view",
+        "importPath": "apps.users.api.views.register_apiview",
+        "description": "apps.users.api.views.register_apiview",
+        "isExtraImport": true,
+        "detail": "apps.users.api.views.register_apiview",
         "documentation": {}
     },
     {
@@ -913,7 +961,7 @@
         "kind": 6,
         "importPath": "apps.users.api.serializers.user_serializer",
         "description": "apps.users.api.serializers.user_serializer",
-        "peekOfCode": "class UserSerializer(serializers.ModelSerializer):\n    class Meta:\n        model = User\n        fields = ('id','first_name','last_name','email','username','password')\n    def to_representation(self, instance):\n        return {\n            'id':instance.id,\n            'first_name':instance.first_name,\n            'last_name':instance.last_name,\n            'username':instance.username,",
+        "peekOfCode": "class UserSerializer(serializers.ModelSerializer):\n    class Meta:\n        model = User\n        fields = ('id','first_name','last_name','email','username')\n    def to_representation(self, instance):\n        return {\n            'id':instance.id,\n            'first_name':instance.first_name,\n            'last_name':instance.last_name,\n            'username':instance.username,",
         "detail": "apps.users.api.serializers.user_serializer",
         "documentation": {}
     },
@@ -933,6 +981,15 @@
         "description": "apps.users.api.serializers.user_serializer",
         "peekOfCode": "class UpdateUserSerializer(serializers.ModelSerializer):\n    class Meta: \n        model = User\n        fields = ('username','email','first_name','last_name')",
         "detail": "apps.users.api.serializers.user_serializer",
+        "documentation": {}
+    },
+    {
+        "label": "create_client_api_view",
+        "kind": 2,
+        "importPath": "apps.users.api.views.register_apiview",
+        "description": "apps.users.api.views.register_apiview",
+        "peekOfCode": "def create_client_api_view(request):   \n    # create\n    if request.method == 'POST':\n        user_serializer = UserSerializer(data = request.data)\n        try:\n            if user_serializer.is_valid():\n                user_serializer.save()\n                return Response({'message':'Successful registration'}, status= status.HTTP_201_CREATED)\n            return Response({'error':user_serializer.errors}, status = status.HTTP_400_BAD_REQUEST)\n        except: ",
+        "detail": "apps.users.api.views.register_apiview",
         "documentation": {}
     },
     {
@@ -1273,7 +1330,7 @@
         "kind": 5,
         "importPath": "shopi_cactus_admin.urls",
         "description": "shopi_cactus_admin.urls",
-        "peekOfCode": "urlpatterns = [\n    path('admin/', admin.site.urls),\n    path('users/', include('apps.users.api.routers')),\n    path('plants/', include('apps.plants.api.routers')),\n    path('orders/', include('apps.Order.api.routers')),\n]",
+        "peekOfCode": "urlpatterns = [\n    path('admin/', admin.site.urls),\n    path('users/', include('apps.users.api.routers')),\n    path('plants/', include('apps.plants.api.routers')),\n    path('orders/', include('apps.Order.api.routers')),\n    path('register/', create_client_api_view , name ='register')\n]",
         "detail": "shopi_cactus_admin.urls",
         "documentation": {}
     },

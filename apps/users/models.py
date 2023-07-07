@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import AbstractUser
+from django.core.exceptions import ValidationError
 # Create your models here.
 
 class User(AbstractUser):
@@ -18,3 +19,8 @@ class User(AbstractUser):
     
     def __str__(self) -> str:
         return self.username
+    
+    def save(self, *args,**kargs):
+        if not User.objects.filter(pk = self.pk).exists() and User.objects.exists():
+            raise ValidationError("There can by only User admin register")
+        return super(User,self).save(*args,**kargs)

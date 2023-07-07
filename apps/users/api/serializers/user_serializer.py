@@ -6,7 +6,7 @@ from apps.users.models import User
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
-        fields = ('id','first_name','last_name','email','username','password')
+        fields = ('id','first_name','last_name','email','username')
         
     def to_representation(self, instance):
         return {
@@ -24,7 +24,7 @@ class UserSerializer(serializers.ModelSerializer):
         user.save()
         return user
 
-    
+
         
 class Password_SetSerializer(serializers.Serializer):
     password = serializers.CharField(max_length =128,min_length =8, write_only = True)

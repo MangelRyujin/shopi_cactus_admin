@@ -28,6 +28,7 @@ class UserViewSet(viewsets.GenericViewSet):
         user = self.get_queryset(pk)
         if user is not None:
             user_serializer = self.serializer_class(user)
+            
             return Response(user_serializer.data, status = status.HTTP_200_OK)
         return Response({'error':'No existe el usuario!'},status = status.HTTP_404_NOT_FOUND)
 

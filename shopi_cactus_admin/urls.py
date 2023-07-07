@@ -17,9 +17,12 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path,include
 
+from apps.users.api.views.register_apiview import create_client_api_view
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('users/', include('apps.users.api.routers')),
     path('plants/', include('apps.plants.api.routers')),
     path('orders/', include('apps.Order.api.routers')),
+    path('register/', create_client_api_view , name ='register')
 ]
