@@ -709,6 +709,15 @@
         "documentation": {}
     },
     {
+        "label": "dj_database_url",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "dj_database_url",
+        "description": "dj_database_url",
+        "detail": "dj_database_url",
+        "documentation": {}
+    },
+    {
         "label": "get_asgi_application",
         "importPath": "django.core.asgi",
         "description": "django.core.asgi",
@@ -1086,7 +1095,7 @@
         "kind": 5,
         "importPath": "shopi_cactus_admin.settings.base",
         "description": "shopi_cactus_admin.settings.base",
-        "peekOfCode": "BASE_DIR = Path(__file__).resolve().parent.parent\n# Quick-start development settings - unsuitable for production\n# See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/\n# SECURITY WARNING: keep the secret key used in production secret!\nSECRET_KEY = 'django-insecure-)p=(q$j!9svb3_5x2ed@lgclw9fnyci!g64hj=cq@ptth!194@'\n# SECURITY WARNING: don't run with debug turned on in production!\nDEBUG = True\nALLOWED_HOSTS = []\n# Application definition\nBASE_APPS = [",
+        "peekOfCode": "BASE_DIR = Path(__file__).resolve().parent.parent\n# Quick-start development settings - unsuitable for production\n# See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/\n# SECURITY WARNING: keep the secret key used in production secret!\nSECRET_KEY = os.environ.get('SECRET_KEY', default='My super hyper mega secret key')\n# SECURITY WARNING: don't run with debug turned on in production!\n# Application definition\nBASE_APPS = [\n    'django.contrib.admin',\n    'django.contrib.auth',",
         "detail": "shopi_cactus_admin.settings.base",
         "documentation": {}
     },
@@ -1095,25 +1104,7 @@
         "kind": 5,
         "importPath": "shopi_cactus_admin.settings.base",
         "description": "shopi_cactus_admin.settings.base",
-        "peekOfCode": "SECRET_KEY = 'django-insecure-)p=(q$j!9svb3_5x2ed@lgclw9fnyci!g64hj=cq@ptth!194@'\n# SECURITY WARNING: don't run with debug turned on in production!\nDEBUG = True\nALLOWED_HOSTS = []\n# Application definition\nBASE_APPS = [\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',\n    'django.contrib.sessions',",
-        "detail": "shopi_cactus_admin.settings.base",
-        "documentation": {}
-    },
-    {
-        "label": "DEBUG",
-        "kind": 5,
-        "importPath": "shopi_cactus_admin.settings.base",
-        "description": "shopi_cactus_admin.settings.base",
-        "peekOfCode": "DEBUG = True\nALLOWED_HOSTS = []\n# Application definition\nBASE_APPS = [\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',\n    'django.contrib.sessions',\n    'django.contrib.messages',\n    'django.contrib.staticfiles',",
-        "detail": "shopi_cactus_admin.settings.base",
-        "documentation": {}
-    },
-    {
-        "label": "ALLOWED_HOSTS",
-        "kind": 5,
-        "importPath": "shopi_cactus_admin.settings.base",
-        "description": "shopi_cactus_admin.settings.base",
-        "peekOfCode": "ALLOWED_HOSTS = []\n# Application definition\nBASE_APPS = [\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',\n    'django.contrib.sessions',\n    'django.contrib.messages',\n    'django.contrib.staticfiles',\n]",
+        "peekOfCode": "SECRET_KEY = os.environ.get('SECRET_KEY', default='My super hyper mega secret key')\n# SECURITY WARNING: don't run with debug turned on in production!\n# Application definition\nBASE_APPS = [\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',\n    'django.contrib.sessions',\n    'django.contrib.messages',\n    'django.contrib.staticfiles',",
         "detail": "shopi_cactus_admin.settings.base",
         "documentation": {}
     },
@@ -1140,7 +1131,7 @@
         "kind": 5,
         "importPath": "shopi_cactus_admin.settings.base",
         "description": "shopi_cactus_admin.settings.base",
-        "peekOfCode": "THIRD_APPS = [\n    'rest_framework',\n]\nINSTALLED_APPS = BASE_APPS + LOCAL_APPS + THIRD_APPS\nMIDDLEWARE = [\n    'django.middleware.security.SecurityMiddleware',\n    'django.contrib.sessions.middleware.SessionMiddleware',\n    'django.middleware.common.CommonMiddleware',\n    'django.middleware.csrf.CsrfViewMiddleware',\n    'django.contrib.auth.middleware.AuthenticationMiddleware',",
+        "peekOfCode": "THIRD_APPS = [\n    'rest_framework',\n]\nINSTALLED_APPS = BASE_APPS + LOCAL_APPS + THIRD_APPS\nMIDDLEWARE = [\n    'django.middleware.security.SecurityMiddleware',\n    'whitenoise.middleware.WhiteNoiseMiddleware',\n    'django.contrib.sessions.middleware.SessionMiddleware',\n    'django.middleware.common.CommonMiddleware',\n    'django.middleware.csrf.CsrfViewMiddleware',",
         "detail": "shopi_cactus_admin.settings.base",
         "documentation": {}
     },
@@ -1149,7 +1140,7 @@
         "kind": 5,
         "importPath": "shopi_cactus_admin.settings.base",
         "description": "shopi_cactus_admin.settings.base",
-        "peekOfCode": "INSTALLED_APPS = BASE_APPS + LOCAL_APPS + THIRD_APPS\nMIDDLEWARE = [\n    'django.middleware.security.SecurityMiddleware',\n    'django.contrib.sessions.middleware.SessionMiddleware',\n    'django.middleware.common.CommonMiddleware',\n    'django.middleware.csrf.CsrfViewMiddleware',\n    'django.contrib.auth.middleware.AuthenticationMiddleware',\n    'django.contrib.messages.middleware.MessageMiddleware',\n    'django.middleware.clickjacking.XFrameOptionsMiddleware',\n]",
+        "peekOfCode": "INSTALLED_APPS = BASE_APPS + LOCAL_APPS + THIRD_APPS\nMIDDLEWARE = [\n    'django.middleware.security.SecurityMiddleware',\n    'whitenoise.middleware.WhiteNoiseMiddleware',\n    'django.contrib.sessions.middleware.SessionMiddleware',\n    'django.middleware.common.CommonMiddleware',\n    'django.middleware.csrf.CsrfViewMiddleware',\n    'django.contrib.auth.middleware.AuthenticationMiddleware',\n    'django.contrib.messages.middleware.MessageMiddleware',\n    'django.middleware.clickjacking.XFrameOptionsMiddleware',",
         "detail": "shopi_cactus_admin.settings.base",
         "documentation": {}
     },
@@ -1158,7 +1149,7 @@
         "kind": 5,
         "importPath": "shopi_cactus_admin.settings.base",
         "description": "shopi_cactus_admin.settings.base",
-        "peekOfCode": "MIDDLEWARE = [\n    'django.middleware.security.SecurityMiddleware',\n    'django.contrib.sessions.middleware.SessionMiddleware',\n    'django.middleware.common.CommonMiddleware',\n    'django.middleware.csrf.CsrfViewMiddleware',\n    'django.contrib.auth.middleware.AuthenticationMiddleware',\n    'django.contrib.messages.middleware.MessageMiddleware',\n    'django.middleware.clickjacking.XFrameOptionsMiddleware',\n]\nROOT_URLCONF = 'shopi_cactus_admin.urls'",
+        "peekOfCode": "MIDDLEWARE = [\n    'django.middleware.security.SecurityMiddleware',\n    'whitenoise.middleware.WhiteNoiseMiddleware',\n    'django.contrib.sessions.middleware.SessionMiddleware',\n    'django.middleware.common.CommonMiddleware',\n    'django.middleware.csrf.CsrfViewMiddleware',\n    'django.contrib.auth.middleware.AuthenticationMiddleware',\n    'django.contrib.messages.middleware.MessageMiddleware',\n    'django.middleware.clickjacking.XFrameOptionsMiddleware',\n]",
         "detail": "shopi_cactus_admin.settings.base",
         "documentation": {}
     },
@@ -1302,7 +1293,7 @@
         "kind": 5,
         "importPath": "shopi_cactus_admin.settings.production",
         "description": "shopi_cactus_admin.settings.production",
-        "peekOfCode": "DEBUG = True\nALLOWED_HOSTS = []\n# Database\n# https://docs.djangoproject.com/en/4.2/ref/settings/#databases\nDATABASES = {\n    'default': {\n        'ENGINE': 'django.db.backends.sqlite3',\n        'NAME': BASE_DIR / 'db.sqlite3',\n    }\n}",
+        "peekOfCode": "DEBUG = 'RENDER' not in os.environ\nALLOWED_HOSTS = []\nRENDER_EXTERNAL_HOSTNAME = os.environ.get('RENDER_EXTERNAL_HOSTNAME')\nif RENDER_EXTERNAL_HOSTNAME:\n    ALLOWED_HOSTS.append(RENDER_EXTERNAL_HOSTNAME)\n# Database\n# https://docs.djangoproject.com/en/4.2/ref/settings/#databases\nDATABASES = {\n    'default': dj_database_url.config(\n        default='sqlite:///db.squlite3',",
         "detail": "shopi_cactus_admin.settings.production",
         "documentation": {}
     },
@@ -1311,7 +1302,16 @@
         "kind": 5,
         "importPath": "shopi_cactus_admin.settings.production",
         "description": "shopi_cactus_admin.settings.production",
-        "peekOfCode": "ALLOWED_HOSTS = []\n# Database\n# https://docs.djangoproject.com/en/4.2/ref/settings/#databases\nDATABASES = {\n    'default': {\n        'ENGINE': 'django.db.backends.sqlite3',\n        'NAME': BASE_DIR / 'db.sqlite3',\n    }\n}\nSTATIC_URL = 'static/'",
+        "peekOfCode": "ALLOWED_HOSTS = []\nRENDER_EXTERNAL_HOSTNAME = os.environ.get('RENDER_EXTERNAL_HOSTNAME')\nif RENDER_EXTERNAL_HOSTNAME:\n    ALLOWED_HOSTS.append(RENDER_EXTERNAL_HOSTNAME)\n# Database\n# https://docs.djangoproject.com/en/4.2/ref/settings/#databases\nDATABASES = {\n    'default': dj_database_url.config(\n        default='sqlite:///db.squlite3',\n        conn_max_age=600",
+        "detail": "shopi_cactus_admin.settings.production",
+        "documentation": {}
+    },
+    {
+        "label": "RENDER_EXTERNAL_HOSTNAME",
+        "kind": 5,
+        "importPath": "shopi_cactus_admin.settings.production",
+        "description": "shopi_cactus_admin.settings.production",
+        "peekOfCode": "RENDER_EXTERNAL_HOSTNAME = os.environ.get('RENDER_EXTERNAL_HOSTNAME')\nif RENDER_EXTERNAL_HOSTNAME:\n    ALLOWED_HOSTS.append(RENDER_EXTERNAL_HOSTNAME)\n# Database\n# https://docs.djangoproject.com/en/4.2/ref/settings/#databases\nDATABASES = {\n    'default': dj_database_url.config(\n        default='sqlite:///db.squlite3',\n        conn_max_age=600\n    )",
         "detail": "shopi_cactus_admin.settings.production",
         "documentation": {}
     },
@@ -1320,7 +1320,7 @@
         "kind": 5,
         "importPath": "shopi_cactus_admin.settings.production",
         "description": "shopi_cactus_admin.settings.production",
-        "peekOfCode": "DATABASES = {\n    'default': {\n        'ENGINE': 'django.db.backends.sqlite3',\n        'NAME': BASE_DIR / 'db.sqlite3',\n    }\n}\nSTATIC_URL = 'static/'",
+        "peekOfCode": "DATABASES = {\n    'default': dj_database_url.config(\n        default='sqlite:///db.squlite3',\n        conn_max_age=600\n    )\n}\nSTATIC_URL = 'static/'\nif not DEBUG:\n    STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')\n    STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'",
         "detail": "shopi_cactus_admin.settings.production",
         "documentation": {}
     },
@@ -1329,7 +1329,7 @@
         "kind": 5,
         "importPath": "shopi_cactus_admin.settings.production",
         "description": "shopi_cactus_admin.settings.production",
-        "peekOfCode": "STATIC_URL = 'static/'",
+        "peekOfCode": "STATIC_URL = 'static/'\nif not DEBUG:\n    STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')\n    STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'",
         "detail": "shopi_cactus_admin.settings.production",
         "documentation": {}
     },
