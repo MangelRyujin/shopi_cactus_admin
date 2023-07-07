@@ -601,6 +601,14 @@
         "documentation": {}
     },
     {
+        "label": "UserDetailSerializer",
+        "importPath": "apps.users.api.serializers.user_serializer",
+        "description": "apps.users.api.serializers.user_serializer",
+        "isExtraImport": true,
+        "detail": "apps.users.api.serializers.user_serializer",
+        "documentation": {}
+    },
+    {
         "label": "UserSerializer",
         "importPath": "apps.users.api.serializers.user_serializer",
         "description": "apps.users.api.serializers.user_serializer",
@@ -961,7 +969,16 @@
         "kind": 6,
         "importPath": "apps.users.api.serializers.user_serializer",
         "description": "apps.users.api.serializers.user_serializer",
-        "peekOfCode": "class UserSerializer(serializers.ModelSerializer):\n    class Meta:\n        model = User\n        fields = ('id','first_name','last_name','email','username')\n    def to_representation(self, instance):\n        return {\n            'id':instance.id,\n            'first_name':instance.first_name,\n            'last_name':instance.last_name,\n            'username':instance.username,",
+        "peekOfCode": "class UserSerializer(serializers.ModelSerializer):\n    class Meta:\n        model = User\n        fields = ('id','first_name','last_name','email','username')\n    def to_representation(self, instance):\n        return {\n            'id':instance['id'],\n            'first_name':instance['first_name'],\n            'last_name':instance['last_name'],\n            'username':instance['username'],",
+        "detail": "apps.users.api.serializers.user_serializer",
+        "documentation": {}
+    },
+    {
+        "label": "UserDetailSerializer",
+        "kind": 6,
+        "importPath": "apps.users.api.serializers.user_serializer",
+        "description": "apps.users.api.serializers.user_serializer",
+        "peekOfCode": "class UserDetailSerializer(serializers.ModelSerializer):\n    class Meta:\n        model = User\n        fields = ('id','first_name','last_name','email','username')\nclass Password_SetSerializer(serializers.Serializer):\n    password = serializers.CharField(max_length =128,min_length =8, write_only = True)\n    password2 = serializers.CharField(max_length =128,min_length =8, write_only = True)\n    def validate(self,data):\n        if data['password'] != data['password2']:\n            raise serializers.ValidationError({'password':'Las contraseñas son incorrectas'})",
         "detail": "apps.users.api.serializers.user_serializer",
         "documentation": {}
     },
@@ -997,7 +1014,7 @@
         "kind": 6,
         "importPath": "apps.users.api.views.user_viewset",
         "description": "apps.users.api.views.user_viewset",
-        "peekOfCode": "class UserViewSet(viewsets.GenericViewSet):\n    serializer_class= UserSerializer\n    def get_queryset(self,pk = None):\n        if pk is not None:\n            return self.serializer_class().Meta.model.objects.filter(id=pk).first()\n        return self.serializer_class().Meta.model.objects.all()\n    def list(self,request, *args, **kargs):\n        user = self.get_queryset()\n        if user is not None:\n            user_serializer = self.serializer_class(user,many=True)",
+        "peekOfCode": "class UserViewSet(viewsets.GenericViewSet):\n    serializer_class= UserDetailSerializer\n    def get_queryset(self,pk = None):\n        if pk is not None:\n            return self.serializer_class.Meta.model.objects.filter(id=pk).first()\n        return UserSerializer.Meta.model.objects.all().values('id','first_name','last_name','username','email')\n    def list(self,request, *args, **kargs):\n        user = self.get_queryset()\n        if user is not None:\n            user_serializer = UserSerializer(user,many=True)",
         "detail": "apps.users.api.views.user_viewset",
         "documentation": {}
     },

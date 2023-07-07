@@ -10,11 +10,11 @@ class UserSerializer(serializers.ModelSerializer):
         
     def to_representation(self, instance):
         return {
-            'id':instance.id,
-            'first_name':instance.first_name,
-            'last_name':instance.last_name,
-            'username':instance.username,
-            'email':instance.email,
+            'id':instance['id'],
+            'first_name':instance['first_name'],
+            'last_name':instance['last_name'],
+            'username':instance['username'],
+            'email':instance['email'],
            
         }
     
@@ -24,6 +24,11 @@ class UserSerializer(serializers.ModelSerializer):
         user.save()
         return user
 
+class UserDetailSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = User
+        fields = ('id','first_name','last_name','email','username')
+        
 
         
 class Password_SetSerializer(serializers.Serializer):
