@@ -726,6 +726,14 @@
         "documentation": {}
     },
     {
+        "label": "settings",
+        "importPath": "django.conf",
+        "description": "django.conf",
+        "isExtraImport": true,
+        "detail": "django.conf",
+        "documentation": {}
+    },
+    {
         "label": "path",
         "importPath": "django.urls",
         "description": "django.urls",
@@ -739,6 +747,22 @@
         "description": "django.urls",
         "isExtraImport": true,
         "detail": "django.urls",
+        "documentation": {}
+    },
+    {
+        "label": "re_path",
+        "importPath": "django.urls",
+        "description": "django.urls",
+        "isExtraImport": true,
+        "detail": "django.urls",
+        "documentation": {}
+    },
+    {
+        "label": "serve",
+        "importPath": "django.views.static",
+        "description": "django.views.static",
+        "isExtraImport": true,
+        "detail": "django.views.static",
         "documentation": {}
     },
     {
@@ -1122,7 +1146,7 @@
         "kind": 5,
         "importPath": "shopi_cactus_admin.settings.base",
         "description": "shopi_cactus_admin.settings.base",
-        "peekOfCode": "LOCAL_APPS = [\n    'apps.users',\n    'apps.plants',\n    'apps.Order',\n]\nTHIRD_APPS = [\n    'rest_framework',\n]\nINSTALLED_APPS = BASE_APPS + LOCAL_APPS + THIRD_APPS\nMIDDLEWARE = [",
+        "peekOfCode": "LOCAL_APPS = [\n    'apps.users',\n    'apps.plants',\n    'apps.Order',\n]\nTHIRD_APPS = [\n    'rest_framework',\n    'corsheaders',\n]\nINSTALLED_APPS = BASE_APPS + LOCAL_APPS + THIRD_APPS",
         "detail": "shopi_cactus_admin.settings.base",
         "documentation": {}
     },
@@ -1131,7 +1155,7 @@
         "kind": 5,
         "importPath": "shopi_cactus_admin.settings.base",
         "description": "shopi_cactus_admin.settings.base",
-        "peekOfCode": "THIRD_APPS = [\n    'rest_framework',\n]\nINSTALLED_APPS = BASE_APPS + LOCAL_APPS + THIRD_APPS\nMIDDLEWARE = [\n    'django.middleware.security.SecurityMiddleware',\n    'whitenoise.middleware.WhiteNoiseMiddleware',\n    'django.contrib.sessions.middleware.SessionMiddleware',\n    'django.middleware.common.CommonMiddleware',\n    'django.middleware.csrf.CsrfViewMiddleware',",
+        "peekOfCode": "THIRD_APPS = [\n    'rest_framework',\n    'corsheaders',\n]\nINSTALLED_APPS = BASE_APPS + LOCAL_APPS + THIRD_APPS\nMIDDLEWARE = [\n    'corsheaders.middleware.CorsMiddleware',\n    'django.middleware.security.SecurityMiddleware',\n    'whitenoise.middleware.WhiteNoiseMiddleware',\n    'django.contrib.sessions.middleware.SessionMiddleware',",
         "detail": "shopi_cactus_admin.settings.base",
         "documentation": {}
     },
@@ -1140,7 +1164,7 @@
         "kind": 5,
         "importPath": "shopi_cactus_admin.settings.base",
         "description": "shopi_cactus_admin.settings.base",
-        "peekOfCode": "INSTALLED_APPS = BASE_APPS + LOCAL_APPS + THIRD_APPS\nMIDDLEWARE = [\n    'django.middleware.security.SecurityMiddleware',\n    'whitenoise.middleware.WhiteNoiseMiddleware',\n    'django.contrib.sessions.middleware.SessionMiddleware',\n    'django.middleware.common.CommonMiddleware',\n    'django.middleware.csrf.CsrfViewMiddleware',\n    'django.contrib.auth.middleware.AuthenticationMiddleware',\n    'django.contrib.messages.middleware.MessageMiddleware',\n    'django.middleware.clickjacking.XFrameOptionsMiddleware',",
+        "peekOfCode": "INSTALLED_APPS = BASE_APPS + LOCAL_APPS + THIRD_APPS\nMIDDLEWARE = [\n    'corsheaders.middleware.CorsMiddleware',\n    'django.middleware.security.SecurityMiddleware',\n    'whitenoise.middleware.WhiteNoiseMiddleware',\n    'django.contrib.sessions.middleware.SessionMiddleware',\n    'django.middleware.common.CommonMiddleware',\n    'django.middleware.csrf.CsrfViewMiddleware',\n    'django.contrib.auth.middleware.AuthenticationMiddleware',\n    'django.contrib.messages.middleware.MessageMiddleware',",
         "detail": "shopi_cactus_admin.settings.base",
         "documentation": {}
     },
@@ -1149,7 +1173,7 @@
         "kind": 5,
         "importPath": "shopi_cactus_admin.settings.base",
         "description": "shopi_cactus_admin.settings.base",
-        "peekOfCode": "MIDDLEWARE = [\n    'django.middleware.security.SecurityMiddleware',\n    'whitenoise.middleware.WhiteNoiseMiddleware',\n    'django.contrib.sessions.middleware.SessionMiddleware',\n    'django.middleware.common.CommonMiddleware',\n    'django.middleware.csrf.CsrfViewMiddleware',\n    'django.contrib.auth.middleware.AuthenticationMiddleware',\n    'django.contrib.messages.middleware.MessageMiddleware',\n    'django.middleware.clickjacking.XFrameOptionsMiddleware',\n]",
+        "peekOfCode": "MIDDLEWARE = [\n    'corsheaders.middleware.CorsMiddleware',\n    'django.middleware.security.SecurityMiddleware',\n    'whitenoise.middleware.WhiteNoiseMiddleware',\n    'django.contrib.sessions.middleware.SessionMiddleware',\n    'django.middleware.common.CommonMiddleware',\n    'django.middleware.csrf.CsrfViewMiddleware',\n    'django.contrib.auth.middleware.AuthenticationMiddleware',\n    'django.contrib.messages.middleware.MessageMiddleware',\n    'django.middleware.clickjacking.XFrameOptionsMiddleware',",
         "detail": "shopi_cactus_admin.settings.base",
         "documentation": {}
     },
@@ -1194,7 +1218,7 @@
         "kind": 5,
         "importPath": "shopi_cactus_admin.settings.base",
         "description": "shopi_cactus_admin.settings.base",
-        "peekOfCode": "LANGUAGE_CODE = 'en-us'\nTIME_ZONE = 'UTC'\nUSE_I18N = True\nUSE_TZ = True\nAUTH_USER_MODEL = 'users.User'\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/4.2/howto/static-files/\nSTATIC_URL = 'static/'\n# Default primary key field type\n# https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field",
+        "peekOfCode": "LANGUAGE_CODE = 'en-us'\nTIME_ZONE = 'UTC'\nUSE_I18N = True\nUSE_TZ = True\nAUTH_USER_MODEL = 'users.User'\nCORS_ALLOWED_ORIGINS = [\n    \"http://localhost:8000\",\n    \"http://localhost:3000\",\n    \"http://localhost:5173\",\n]",
         "detail": "shopi_cactus_admin.settings.base",
         "documentation": {}
     },
@@ -1203,7 +1227,7 @@
         "kind": 5,
         "importPath": "shopi_cactus_admin.settings.base",
         "description": "shopi_cactus_admin.settings.base",
-        "peekOfCode": "TIME_ZONE = 'UTC'\nUSE_I18N = True\nUSE_TZ = True\nAUTH_USER_MODEL = 'users.User'\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/4.2/howto/static-files/\nSTATIC_URL = 'static/'\n# Default primary key field type\n# https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'",
+        "peekOfCode": "TIME_ZONE = 'UTC'\nUSE_I18N = True\nUSE_TZ = True\nAUTH_USER_MODEL = 'users.User'\nCORS_ALLOWED_ORIGINS = [\n    \"http://localhost:8000\",\n    \"http://localhost:3000\",\n    \"http://localhost:5173\",\n]\nCORS_ORIGIN_WHITELIST =[",
         "detail": "shopi_cactus_admin.settings.base",
         "documentation": {}
     },
@@ -1212,7 +1236,7 @@
         "kind": 5,
         "importPath": "shopi_cactus_admin.settings.base",
         "description": "shopi_cactus_admin.settings.base",
-        "peekOfCode": "USE_I18N = True\nUSE_TZ = True\nAUTH_USER_MODEL = 'users.User'\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/4.2/howto/static-files/\nSTATIC_URL = 'static/'\n# Default primary key field type\n# https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'",
+        "peekOfCode": "USE_I18N = True\nUSE_TZ = True\nAUTH_USER_MODEL = 'users.User'\nCORS_ALLOWED_ORIGINS = [\n    \"http://localhost:8000\",\n    \"http://localhost:3000\",\n    \"http://localhost:5173\",\n]\nCORS_ORIGIN_WHITELIST =[\n    \"http://localhost:8000\",",
         "detail": "shopi_cactus_admin.settings.base",
         "documentation": {}
     },
@@ -1221,7 +1245,7 @@
         "kind": 5,
         "importPath": "shopi_cactus_admin.settings.base",
         "description": "shopi_cactus_admin.settings.base",
-        "peekOfCode": "USE_TZ = True\nAUTH_USER_MODEL = 'users.User'\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/4.2/howto/static-files/\nSTATIC_URL = 'static/'\n# Default primary key field type\n# https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'",
+        "peekOfCode": "USE_TZ = True\nAUTH_USER_MODEL = 'users.User'\nCORS_ALLOWED_ORIGINS = [\n    \"http://localhost:8000\",\n    \"http://localhost:3000\",\n    \"http://localhost:5173\",\n]\nCORS_ORIGIN_WHITELIST =[\n    \"http://localhost:8000\",\n    \"http://localhost:3000\",",
         "detail": "shopi_cactus_admin.settings.base",
         "documentation": {}
     },
@@ -1230,7 +1254,16 @@
         "kind": 5,
         "importPath": "shopi_cactus_admin.settings.base",
         "description": "shopi_cactus_admin.settings.base",
-        "peekOfCode": "AUTH_USER_MODEL = 'users.User'\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/4.2/howto/static-files/\nSTATIC_URL = 'static/'\n# Default primary key field type\n# https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'",
+        "peekOfCode": "AUTH_USER_MODEL = 'users.User'\nCORS_ALLOWED_ORIGINS = [\n    \"http://localhost:8000\",\n    \"http://localhost:3000\",\n    \"http://localhost:5173\",\n]\nCORS_ORIGIN_WHITELIST =[\n    \"http://localhost:8000\",\n    \"http://localhost:3000\",\n    \"http://localhost:5173\",",
+        "detail": "shopi_cactus_admin.settings.base",
+        "documentation": {}
+    },
+    {
+        "label": "CORS_ALLOWED_ORIGINS",
+        "kind": 5,
+        "importPath": "shopi_cactus_admin.settings.base",
+        "description": "shopi_cactus_admin.settings.base",
+        "peekOfCode": "CORS_ALLOWED_ORIGINS = [\n    \"http://localhost:8000\",\n    \"http://localhost:3000\",\n    \"http://localhost:5173\",\n]\nCORS_ORIGIN_WHITELIST =[\n    \"http://localhost:8000\",\n    \"http://localhost:3000\",\n    \"http://localhost:5173\",\n]",
         "detail": "shopi_cactus_admin.settings.base",
         "documentation": {}
     },
@@ -1320,7 +1353,7 @@
         "kind": 5,
         "importPath": "shopi_cactus_admin.settings.production",
         "description": "shopi_cactus_admin.settings.production",
-        "peekOfCode": "DATABASES = {\n    'default': dj_database_url.config(\n        default='sqlite:///db.squlite3',\n        conn_max_age=600\n    )\n}\nSTATIC_URL = 'static/'\nif not DEBUG:\n    STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')\n    STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'",
+        "peekOfCode": "DATABASES = {\n    'default': dj_database_url.config(\n        default='sqlite:///db.squlite3',\n        conn_max_age=600\n    )\n}\nSTATIC_URL = 'static/'\nMEDIA_URL = '/media/'\nMEDIA_ROOT = os.path.join(BASE_DIR, 'media')\nif not DEBUG:",
         "detail": "shopi_cactus_admin.settings.production",
         "documentation": {}
     },
@@ -1329,7 +1362,25 @@
         "kind": 5,
         "importPath": "shopi_cactus_admin.settings.production",
         "description": "shopi_cactus_admin.settings.production",
-        "peekOfCode": "STATIC_URL = 'static/'\nif not DEBUG:\n    STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')\n    STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'",
+        "peekOfCode": "STATIC_URL = 'static/'\nMEDIA_URL = '/media/'\nMEDIA_ROOT = os.path.join(BASE_DIR, 'media')\nif not DEBUG:\n    STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')\n    STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'",
+        "detail": "shopi_cactus_admin.settings.production",
+        "documentation": {}
+    },
+    {
+        "label": "MEDIA_URL",
+        "kind": 5,
+        "importPath": "shopi_cactus_admin.settings.production",
+        "description": "shopi_cactus_admin.settings.production",
+        "peekOfCode": "MEDIA_URL = '/media/'\nMEDIA_ROOT = os.path.join(BASE_DIR, 'media')\nif not DEBUG:\n    STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')\n    STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'",
+        "detail": "shopi_cactus_admin.settings.production",
+        "documentation": {}
+    },
+    {
+        "label": "MEDIA_ROOT",
+        "kind": 5,
+        "importPath": "shopi_cactus_admin.settings.production",
+        "description": "shopi_cactus_admin.settings.production",
+        "peekOfCode": "MEDIA_ROOT = os.path.join(BASE_DIR, 'media')\nif not DEBUG:\n    STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')\n    STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'",
         "detail": "shopi_cactus_admin.settings.production",
         "documentation": {}
     },
@@ -1347,7 +1398,7 @@
         "kind": 5,
         "importPath": "shopi_cactus_admin.urls",
         "description": "shopi_cactus_admin.urls",
-        "peekOfCode": "urlpatterns = [\n    path('admin/', admin.site.urls),\n    path('users/', include('apps.users.api.routers')),\n    path('plants/', include('apps.plants.api.routers')),\n    path('orders/', include('apps.Order.api.routers')),\n    path('register/', create_client_api_view , name ='register')\n]",
+        "peekOfCode": "urlpatterns = [\n    path('admin/', admin.site.urls),\n    path('users/', include('apps.users.api.routers')),\n    path('plants/', include('apps.plants.api.routers')),\n    path('orders/', include('apps.Order.api.routers')),\n    path('register/', create_client_api_view , name ='register')\n]\nurlpatterns+=[\n    re_path(r'^media/(?P<path>.*)$',serve, {\n        'document_root': settings.MEDIA_ROOT,",
         "detail": "shopi_cactus_admin.urls",
         "documentation": {}
     },
@@ -1365,7 +1416,7 @@
         "kind": 2,
         "importPath": "manage",
         "description": "manage",
-        "peekOfCode": "def main():\n    \"\"\"Run administrative tasks.\"\"\"\n    os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'shopi_cactus_admin.settings.local')\n    try:\n        from django.core.management import execute_from_command_line\n    except ImportError as exc:\n        raise ImportError(\n            \"Couldn't import Django. Are you sure it's installed and \"\n            \"available on your PYTHONPATH environment variable? Did you \"\n            \"forget to activate a virtual environment?\"",
+        "peekOfCode": "def main():\n    \"\"\"Run administrative tasks.\"\"\"\n    os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'shopi_cactus_admin.settings.production')\n    try:\n        from django.core.management import execute_from_command_line\n    except ImportError as exc:\n        raise ImportError(\n            \"Couldn't import Django. Are you sure it's installed and \"\n            \"available on your PYTHONPATH environment variable? Did you \"\n            \"forget to activate a virtual environment?\"",
         "detail": "manage",
         "documentation": {}
     }
