@@ -40,6 +40,22 @@
         "documentation": {}
     },
     {
+        "label": "viewsets",
+        "importPath": "rest_framework",
+        "description": "rest_framework",
+        "isExtraImport": true,
+        "detail": "rest_framework",
+        "documentation": {}
+    },
+    {
+        "label": "status",
+        "importPath": "rest_framework",
+        "description": "rest_framework",
+        "isExtraImport": true,
+        "detail": "rest_framework",
+        "documentation": {}
+    },
+    {
         "label": "serializers",
         "importPath": "rest_framework",
         "description": "rest_framework",
@@ -149,6 +165,94 @@
         "description": "apps.Order.models",
         "isExtraImport": true,
         "detail": "apps.Order.models",
+        "documentation": {}
+    },
+    {
+        "label": "Response",
+        "importPath": "rest_framework.response",
+        "description": "rest_framework.response",
+        "isExtraImport": true,
+        "detail": "rest_framework.response",
+        "documentation": {}
+    },
+    {
+        "label": "Response",
+        "importPath": "rest_framework.response",
+        "description": "rest_framework.response",
+        "isExtraImport": true,
+        "detail": "rest_framework.response",
+        "documentation": {}
+    },
+    {
+        "label": "Response",
+        "importPath": "rest_framework.response",
+        "description": "rest_framework.response",
+        "isExtraImport": true,
+        "detail": "rest_framework.response",
+        "documentation": {}
+    },
+    {
+        "label": "Response",
+        "importPath": "rest_framework.response",
+        "description": "rest_framework.response",
+        "isExtraImport": true,
+        "detail": "rest_framework.response",
+        "documentation": {}
+    },
+    {
+        "label": "Response",
+        "importPath": "rest_framework.response",
+        "description": "rest_framework.response",
+        "isExtraImport": true,
+        "detail": "rest_framework.response",
+        "documentation": {}
+    },
+    {
+        "label": "Response",
+        "importPath": "rest_framework.response",
+        "description": "rest_framework.response",
+        "isExtraImport": true,
+        "detail": "rest_framework.response",
+        "documentation": {}
+    },
+    {
+        "label": "Response",
+        "importPath": "rest_framework.response",
+        "description": "rest_framework.response",
+        "isExtraImport": true,
+        "detail": "rest_framework.response",
+        "documentation": {}
+    },
+    {
+        "label": "api_view",
+        "importPath": "rest_framework.decorators",
+        "description": "rest_framework.decorators",
+        "isExtraImport": true,
+        "detail": "rest_framework.decorators",
+        "documentation": {}
+    },
+    {
+        "label": "api_view",
+        "importPath": "rest_framework.decorators",
+        "description": "rest_framework.decorators",
+        "isExtraImport": true,
+        "detail": "rest_framework.decorators",
+        "documentation": {}
+    },
+    {
+        "label": "action",
+        "importPath": "rest_framework.decorators",
+        "description": "rest_framework.decorators",
+        "isExtraImport": true,
+        "detail": "rest_framework.decorators",
+        "documentation": {}
+    },
+    {
+        "label": "OrderSerializer",
+        "importPath": "apps.Order.api.serializers.order_serializers",
+        "description": "apps.Order.api.serializers.order_serializers",
+        "isExtraImport": true,
+        "detail": "apps.Order.api.serializers.order_serializers",
         "documentation": {}
     },
     {
@@ -165,54 +269,6 @@
         "description": "apps.Order.api.serializers.order_serializers",
         "isExtraImport": true,
         "detail": "apps.Order.api.serializers.order_serializers",
-        "documentation": {}
-    },
-    {
-        "label": "Response",
-        "importPath": "rest_framework.response",
-        "description": "rest_framework.response",
-        "isExtraImport": true,
-        "detail": "rest_framework.response",
-        "documentation": {}
-    },
-    {
-        "label": "Response",
-        "importPath": "rest_framework.response",
-        "description": "rest_framework.response",
-        "isExtraImport": true,
-        "detail": "rest_framework.response",
-        "documentation": {}
-    },
-    {
-        "label": "Response",
-        "importPath": "rest_framework.response",
-        "description": "rest_framework.response",
-        "isExtraImport": true,
-        "detail": "rest_framework.response",
-        "documentation": {}
-    },
-    {
-        "label": "Response",
-        "importPath": "rest_framework.response",
-        "description": "rest_framework.response",
-        "isExtraImport": true,
-        "detail": "rest_framework.response",
-        "documentation": {}
-    },
-    {
-        "label": "Response",
-        "importPath": "rest_framework.response",
-        "description": "rest_framework.response",
-        "isExtraImport": true,
-        "detail": "rest_framework.response",
-        "documentation": {}
-    },
-    {
-        "label": "Response",
-        "importPath": "rest_framework.response",
-        "description": "rest_framework.response",
-        "isExtraImport": true,
-        "detail": "rest_framework.response",
         "documentation": {}
     },
     {
@@ -256,6 +312,78 @@
         "documentation": {}
     },
     {
+        "label": "path",
+        "importPath": "django.urls",
+        "description": "django.urls",
+        "isExtraImport": true,
+        "detail": "django.urls",
+        "documentation": {}
+    },
+    {
+        "label": "path",
+        "importPath": "django.urls",
+        "description": "django.urls",
+        "isExtraImport": true,
+        "detail": "django.urls",
+        "documentation": {}
+    },
+    {
+        "label": "include",
+        "importPath": "django.urls",
+        "description": "django.urls",
+        "isExtraImport": true,
+        "detail": "django.urls",
+        "documentation": {}
+    },
+    {
+        "label": "re_path",
+        "importPath": "django.urls",
+        "description": "django.urls",
+        "isExtraImport": true,
+        "detail": "django.urls",
+        "documentation": {}
+    },
+    {
+        "label": "create_order_api_view",
+        "importPath": "apps.Order.api.views.created_order_view",
+        "description": "apps.Order.api.views.created_order_view",
+        "isExtraImport": true,
+        "detail": "apps.Order.api.views.created_order_view",
+        "documentation": {}
+    },
+    {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
         "label": "migrations",
         "importPath": "django.db",
         "description": "django.db",
@@ -312,6 +440,22 @@
         "documentation": {}
     },
     {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
         "label": "models",
         "importPath": "django.db",
         "description": "django.db",
@@ -320,31 +464,7 @@
         "documentation": {}
     },
     {
-        "label": "migrations",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
         "label": "models",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "migrations",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "migrations",
         "importPath": "django.db",
         "description": "django.db",
         "isExtraImport": true,
@@ -601,22 +721,6 @@
         "documentation": {}
     },
     {
-        "label": "api_view",
-        "importPath": "rest_framework.decorators",
-        "description": "rest_framework.decorators",
-        "isExtraImport": true,
-        "detail": "rest_framework.decorators",
-        "documentation": {}
-    },
-    {
-        "label": "action",
-        "importPath": "rest_framework.decorators",
-        "description": "rest_framework.decorators",
-        "isExtraImport": true,
-        "detail": "rest_framework.decorators",
-        "documentation": {}
-    },
-    {
         "label": "UserSerializer",
         "importPath": "apps.users.api.serializers.user_serializer",
         "description": "apps.users.api.serializers.user_serializer",
@@ -758,30 +862,6 @@
         "documentation": {}
     },
     {
-        "label": "path",
-        "importPath": "django.urls",
-        "description": "django.urls",
-        "isExtraImport": true,
-        "detail": "django.urls",
-        "documentation": {}
-    },
-    {
-        "label": "include",
-        "importPath": "django.urls",
-        "description": "django.urls",
-        "isExtraImport": true,
-        "detail": "django.urls",
-        "documentation": {}
-    },
-    {
-        "label": "re_path",
-        "importPath": "django.urls",
-        "description": "django.urls",
-        "isExtraImport": true,
-        "detail": "django.urls",
-        "documentation": {}
-    },
-    {
         "label": "serve",
         "importPath": "django.views.static",
         "description": "django.views.static",
@@ -819,7 +899,7 @@
         "kind": 6,
         "importPath": "apps.Order.api.serializers.order_serializers",
         "description": "apps.Order.api.serializers.order_serializers",
-        "peekOfCode": "class OrderSerializer(serializers.ModelSerializer):\n    class Meta:\n        model = Order\n        fields = '__all__'\nclass Items_OrderSerializer(serializers.ModelSerializer):\n    class Meta:\n        model = Items_Order\n        fields = '__all__'\n        def to_representation(self, instance):\n            return{",
+        "peekOfCode": "class OrderSerializer(serializers.ModelSerializer):\n    class Meta:\n        model = Order\n        fields = '__all__'\n        def to_representation(self, instance):\n            return {\n                'user_id': instance.user_id,\n                'cost': instance.cost,\n            }\n        def validate_cost(self,value):",
         "detail": "apps.Order.api.serializers.order_serializers",
         "documentation": {}
     },
@@ -830,6 +910,15 @@
         "description": "apps.Order.api.serializers.order_serializers",
         "peekOfCode": "class Items_OrderSerializer(serializers.ModelSerializer):\n    class Meta:\n        model = Items_Order\n        fields = '__all__'\n        def to_representation(self, instance):\n            return{\n                'plant': instance.plant,\n                'order': instance.order,\n                'cost': instance.cost,\n                'qty': instance.qty,",
         "detail": "apps.Order.api.serializers.order_serializers",
+        "documentation": {}
+    },
+    {
+        "label": "create_order_api_view",
+        "kind": 2,
+        "importPath": "apps.Order.api.views.created_order_view",
+        "description": "apps.Order.api.views.created_order_view",
+        "peekOfCode": "def create_order_api_view(request):\n    if request.method == 'POST':\n        order_serializers = OrderSerializer(data = request.data)\n        if order_serializers.is_valid():\n            order_serializers.save()\n            return Response({'message':'Corectly created order!!!'}, status=status.HTTP_201_CREATED)\n        return Response({'errors':order_serializers.errors}, status= status.HTTP_400_BAD_REQUEST)",
+        "detail": "apps.Order.api.views.created_order_view",
         "documentation": {}
     },
     {
@@ -866,6 +955,15 @@
         "description": "apps.Order.api.routers",
         "peekOfCode": "urlpatterns = router.urls",
         "detail": "apps.Order.api.routers",
+        "documentation": {}
+    },
+    {
+        "label": "urlpatterns",
+        "kind": 5,
+        "importPath": "apps.Order.api.urls",
+        "description": "apps.Order.api.urls",
+        "peekOfCode": "urlpatterns = [\n    path('order/', create_order_api_view, name ='order'),\n]",
+        "detail": "apps.Order.api.urls",
         "documentation": {}
     },
     {
@@ -932,6 +1030,15 @@
         "documentation": {}
     },
     {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "apps.Order.migrations.0008_order_cost",
+        "description": "apps.Order.migrations.0008_order_cost",
+        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('Order', '0007_remove_order_email_remove_order_first_name_and_more'),\n    ]\n    operations = [\n        migrations.AddField(\n            model_name='order',\n            name='cost',\n            field=models.DecimalField(decimal_places=2, default=0, max_digits=10, verbose_name='Costo'),\n            preserve_default=False,",
+        "detail": "apps.Order.migrations.0008_order_cost",
+        "documentation": {}
+    },
+    {
         "label": "OrderConfig",
         "kind": 6,
         "importPath": "apps.Order.apps",
@@ -945,7 +1052,7 @@
         "kind": 6,
         "importPath": "apps.Order.models",
         "description": "apps.Order.models",
-        "peekOfCode": "class Order(models.Model):\n    \"\"\"Model definition for Order.\"\"\"\n    user_id = models.PositiveIntegerField('Id de usuario',blank=False, null=False)\n    # TODO: Define fields here\n    class Meta:\n        \"\"\"Meta definition for Order.\"\"\"\n        verbose_name = 'Order'\n        verbose_name_plural = 'Orders'\n    EQUIRED_FIELDS = ['first_name','last_name','email']\n    def __str__(self):",
+        "peekOfCode": "class Order(models.Model):\n    \"\"\"Model definition for Order.\"\"\"\n    user_id = models.PositiveIntegerField('Id de usuario',blank=False, null=False)\n    cost = models.DecimalField('Costo', max_digits=10,  decimal_places=2, blank= False, null= False)\n    # TODO: Define fields here\n    class Meta:\n        \"\"\"Meta definition for Order.\"\"\"\n        verbose_name = 'Order'\n        verbose_name_plural = 'Orders'\n    EQUIRED_FIELDS = ['first_name','last_name','email']",
         "detail": "apps.Order.models",
         "documentation": {}
     },
@@ -1449,7 +1556,7 @@
         "kind": 5,
         "importPath": "shopi_cactus_admin.urls",
         "description": "shopi_cactus_admin.urls",
-        "peekOfCode": "urlpatterns = [\n    path('admin/', admin.site.urls),\n    path('users/', include('apps.users.api.routers')),\n    path('plants/', include('apps.plants.api.routers')),\n    path('orders/', include('apps.Order.api.routers')),\n    path('register/', create_client_api_view , name ='register')\n]\nurlpatterns+=[\n    re_path(r'^media/(?P<path>.*)$',serve, {\n        'document_root': settings.MEDIA_ROOT,",
+        "peekOfCode": "urlpatterns = [\n    path('admin/', admin.site.urls),\n    path('users/', include('apps.users.api.routers')),\n    path('plants/', include('apps.plants.api.routers')),\n    path('orders/', include('apps.Order.api.routers')),\n    path('create_order/', include('apps.Order.api.urls')),\n    path('register/', create_client_api_view , name ='register')\n]\nurlpatterns+=[\n    re_path(r'^media/(?P<path>.*)$',serve, {",
         "detail": "shopi_cactus_admin.urls",
         "documentation": {}
     },

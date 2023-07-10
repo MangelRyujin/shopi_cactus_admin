@@ -25,6 +25,7 @@ urlpatterns = [
     path('users/', include('apps.users.api.routers')),
     path('plants/', include('apps.plants.api.routers')),
     path('orders/', include('apps.Order.api.routers')),
+    path('create_order/', include('apps.Order.api.urls')),
     path('register/', create_client_api_view , name ='register')
 ]
 
