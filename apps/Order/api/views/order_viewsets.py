@@ -25,3 +25,10 @@ class OrderViewSet(viewsets.GenericViewSet):
             order_serializer = self.serializer_class(order)
             return Response(order_serializer.data, status= status.HTTP_200_OK)
         return Response({'message':"Order don't exist"}, status= status.HTTP_404_NOT_FOUND)    
+
+    def create(self,request,*args, **kargs):
+        order_serializers = self.serializer_class(data = request.data)
+        if order_serializers.is_valid():
+            order_serializers.save()
+            return Response({'message':'Planta creada correctamente'}, status=status.HTTP_201_CREATED)
+        return Response({'errors':order_serializers.errors}, status= status.HTTP_400_BAD_REQUEST)

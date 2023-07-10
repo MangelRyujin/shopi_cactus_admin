@@ -320,7 +320,31 @@
         "documentation": {}
     },
     {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
         "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "migrations",
         "importPath": "django.db",
         "description": "django.db",
         "isExtraImport": true,
@@ -795,7 +819,7 @@
         "kind": 6,
         "importPath": "apps.Order.api.serializers.order_serializers",
         "description": "apps.Order.api.serializers.order_serializers",
-        "peekOfCode": "class OrderSerializer(serializers.ModelSerializer):\n    class Meta:\n        model = Order\n        fields = '__all__'\n        def to_representation(self, instance):\n            return {\n                'user_id': instance.user_id,\n                'first_name': instance.first_name,\n                'last_name': instance.last_name,\n                'email': instance.email,",
+        "peekOfCode": "class OrderSerializer(serializers.ModelSerializer):\n    class Meta:\n        model = Order\n        fields = '__all__'\nclass Items_OrderSerializer(serializers.ModelSerializer):\n    class Meta:\n        model = Items_Order\n        fields = '__all__'\n        def to_representation(self, instance):\n            return{",
         "detail": "apps.Order.api.serializers.order_serializers",
         "documentation": {}
     },
@@ -881,6 +905,33 @@
         "documentation": {}
     },
     {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "apps.Order.migrations.0005_alter_order_cost_alter_order_user_id",
+        "description": "apps.Order.migrations.0005_alter_order_cost_alter_order_user_id",
+        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('Order', '0004_alter_order_cost'),\n    ]\n    operations = [\n        migrations.AlterField(\n            model_name='order',\n            name='cost',\n            field=models.DecimalField(decimal_places=2, max_digits=10, verbose_name='Costo'),\n        ),",
+        "detail": "apps.Order.migrations.0005_alter_order_cost_alter_order_user_id",
+        "documentation": {}
+    },
+    {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "apps.Order.migrations.0006_remove_order_cost",
+        "description": "apps.Order.migrations.0006_remove_order_cost",
+        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('Order', '0005_alter_order_cost_alter_order_user_id'),\n    ]\n    operations = [\n        migrations.RemoveField(\n            model_name='order',\n            name='cost',\n        ),\n    ]",
+        "detail": "apps.Order.migrations.0006_remove_order_cost",
+        "documentation": {}
+    },
+    {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "apps.Order.migrations.0007_remove_order_email_remove_order_first_name_and_more",
+        "description": "apps.Order.migrations.0007_remove_order_email_remove_order_first_name_and_more",
+        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('Order', '0006_remove_order_cost'),\n    ]\n    operations = [\n        migrations.RemoveField(\n            model_name='order',\n            name='email',\n        ),\n        migrations.RemoveField(",
+        "detail": "apps.Order.migrations.0007_remove_order_email_remove_order_first_name_and_more",
+        "documentation": {}
+    },
+    {
         "label": "OrderConfig",
         "kind": 6,
         "importPath": "apps.Order.apps",
@@ -894,7 +945,7 @@
         "kind": 6,
         "importPath": "apps.Order.models",
         "description": "apps.Order.models",
-        "peekOfCode": "class Order(models.Model):\n    \"\"\"Model definition for Order.\"\"\"\n    user_id = models.PositiveIntegerField('Id de usuario',blank=False, null=False)\n    first_name = models.CharField('Nombre', max_length=255, blank=True, null=True)\n    last_name = models.CharField('Apellidos', max_length=255, blank=True, null=True)\n    email = models.EmailField('Correo Electrónico', max_length=255 , unique=False, blank = False, null= False)\n    cost = models.DecimalField('Costo', max_digits=10,  decimal_places=2, blank= False, null= False)\n    # TODO: Define fields here\n    class Meta:\n        \"\"\"Meta definition for Order.\"\"\"",
+        "peekOfCode": "class Order(models.Model):\n    \"\"\"Model definition for Order.\"\"\"\n    user_id = models.PositiveIntegerField('Id de usuario',blank=False, null=False)\n    # TODO: Define fields here\n    class Meta:\n        \"\"\"Meta definition for Order.\"\"\"\n        verbose_name = 'Order'\n        verbose_name_plural = 'Orders'\n    EQUIRED_FIELDS = ['first_name','last_name','email']\n    def __str__(self):",
         "detail": "apps.Order.models",
         "documentation": {}
     },

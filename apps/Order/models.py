@@ -1,7 +1,4 @@
 from django.db import models
-
-# Create your models here.
-from django.db import models
 from apps.plants.models import Plant
 
 # from django.core.validators import MinLengthValidator
@@ -12,10 +9,6 @@ from apps.plants.models import Plant
 class Order(models.Model):
     """Model definition for Order."""
     user_id = models.PositiveIntegerField('Id de usuario',blank=False, null=False)
-    first_name = models.CharField('Nombre', max_length=255, blank=True, null=True)
-    last_name = models.CharField('Apellidos', max_length=255, blank=True, null=True)
-    email = models.EmailField('Correo Electrónico', max_length=255 , unique=False, blank = False, null= False)
-    cost = models.DecimalField('Costo', max_digits=10,  decimal_places=2, blank= False, null= False)
     
     # TODO: Define fields here
 
@@ -30,6 +23,16 @@ class Order(models.Model):
     def __str__(self):
         return f'Pedido realizado por el usuario {self.first_name} {self.last_name}'
 
+    def cost(self):
+        cost = 0.0
+        items =  Items_Order.objects.filter(order = self.id)
+        for item in items:
+            cost += item.cost
+        return cost
+            
+        
+        
+        
 class Items_Order(models.Model):
     plant = models.ForeignKey(Plant, on_delete=models.CASCADE, verbose_name='Plant',blank=False, null= False)
     order= models.ForeignKey(Order, on_delete=models.CASCADE, verbose_name='Order',blank=False, null= False)

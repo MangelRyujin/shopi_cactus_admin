@@ -7,19 +7,8 @@ class OrderSerializer(serializers.ModelSerializer):
         model = Order
         fields = '__all__'
         
-        def to_representation(self, instance):
-            return {
-                'user_id': instance.user_id,
-                'first_name': instance.first_name,
-                'last_name': instance.last_name,
-                'email': instance.email,
-                'cost': instance.cost,
-            }
             
-        def validate_cost(self,value):
-            if value < 0:
-                raise serializers.ValidationError("El costo debe de ser mayor que 0")
-            return value
+        
         
 class Items_OrderSerializer(serializers.ModelSerializer):
     class Meta:
