@@ -30,5 +30,5 @@ class OrderViewSet(viewsets.GenericViewSet):
         order_serializers = self.serializer_class(data = request.data)
         if order_serializers.is_valid():
             order_serializers.save()
-            return Response({'message':'Planta creada correctamente'}, status=status.HTTP_201_CREATED)
+            return Response({'message':'Corectly created order!!!'}, status=status.HTTP_201_CREATED)
         return Response({'errors':order_serializers.errors}, status= status.HTTP_400_BAD_REQUEST)
