@@ -12,7 +12,7 @@ def create_order_api_view(request):
         items = request.data['items']
         if order_serializers.is_valid():
             order_serializers.save()
-            return Response({'message':'Corectly created order!!!','order_id':order_serializers.data['id'],'items':items}, status=status.HTTP_201_CREATED)
+            return Response({'message':'Corectly created order!!!','order_id':order_serializers.data['id'],'items':items,'item':items[0]}, status=status.HTTP_201_CREATED)
         return Response({'errors':order_serializers.errors}, status= status.HTTP_400_BAD_REQUEST)
     
 # Create items order
