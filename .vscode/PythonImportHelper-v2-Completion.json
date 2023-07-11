@@ -966,7 +966,7 @@
         "kind": 2,
         "importPath": "apps.Order.api.views.created_order_view",
         "description": "apps.Order.api.views.created_order_view",
-        "peekOfCode": "def create_items_order_api_view(request):\n    if request.method == 'POST':\n        items = request.data\n        plant = Plant.objects.filter(id = items['plant_id']).first()\n        order = Order.objects.filter(id = items['order_id']).first()\n        item = Items_Order.objects.create(\n            plant = plant,\n            order = order,\n            cost  = items['cost'],\n            qty  = items['qty']",
+        "peekOfCode": "def create_items_order_api_view(request):\n    if request.method == 'POST':\n        # items = request.data\n        # plant = Plant.objects.filter(id = items['plant_id']).first()\n        # order = Order.objects.filter(id = items['order_id']).first()\n        # item = Items_Order.objects.create(\n        #     plant = plant,\n        #     order = order,\n        #     cost  = items['cost'],\n        #     qty  = items['qty']",
         "detail": "apps.Order.api.views.created_order_view",
         "documentation": {}
     },
