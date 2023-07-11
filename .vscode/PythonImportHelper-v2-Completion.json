@@ -152,6 +152,22 @@
         "documentation": {}
     },
     {
+        "label": "Items_Order",
+        "importPath": "apps.Order.models",
+        "description": "apps.Order.models",
+        "isExtraImport": true,
+        "detail": "apps.Order.models",
+        "documentation": {}
+    },
+    {
+        "label": "Order",
+        "importPath": "apps.Order.models",
+        "description": "apps.Order.models",
+        "isExtraImport": true,
+        "detail": "apps.Order.models",
+        "documentation": {}
+    },
+    {
         "label": "Order",
         "importPath": "apps.Order.models",
         "description": "apps.Order.models",
@@ -277,6 +293,38 @@
         "description": "apps.Order.api.serializers.order_serializers",
         "isExtraImport": true,
         "detail": "apps.Order.api.serializers.order_serializers",
+        "documentation": {}
+    },
+    {
+        "label": "Plant",
+        "importPath": "apps.plants.models",
+        "description": "apps.plants.models",
+        "isExtraImport": true,
+        "detail": "apps.plants.models",
+        "documentation": {}
+    },
+    {
+        "label": "Plant",
+        "importPath": "apps.plants.models",
+        "description": "apps.plants.models",
+        "isExtraImport": true,
+        "detail": "apps.plants.models",
+        "documentation": {}
+    },
+    {
+        "label": "Category",
+        "importPath": "apps.plants.models",
+        "description": "apps.plants.models",
+        "isExtraImport": true,
+        "detail": "apps.plants.models",
+        "documentation": {}
+    },
+    {
+        "label": "Plant",
+        "importPath": "apps.plants.models",
+        "description": "apps.plants.models",
+        "isExtraImport": true,
+        "detail": "apps.plants.models",
         "documentation": {}
     },
     {
@@ -617,30 +665,6 @@
         "documentation": {}
     },
     {
-        "label": "Plant",
-        "importPath": "apps.plants.models",
-        "description": "apps.plants.models",
-        "isExtraImport": true,
-        "detail": "apps.plants.models",
-        "documentation": {}
-    },
-    {
-        "label": "Category",
-        "importPath": "apps.plants.models",
-        "description": "apps.plants.models",
-        "isExtraImport": true,
-        "detail": "apps.plants.models",
-        "documentation": {}
-    },
-    {
-        "label": "Plant",
-        "importPath": "apps.plants.models",
-        "description": "apps.plants.models",
-        "isExtraImport": true,
-        "detail": "apps.plants.models",
-        "documentation": {}
-    },
-    {
         "label": "TestCase",
         "importPath": "django.test",
         "description": "django.test",
@@ -942,7 +966,7 @@
         "kind": 2,
         "importPath": "apps.Order.api.views.created_order_view",
         "description": "apps.Order.api.views.created_order_view",
-        "peekOfCode": "def create_items_order_api_view(request):\n    if request.method == 'POST':\n        items = request.data\n        if items:\n            return Response({'message':items}, status=status.HTTP_200_OK)\n        return Response({'message':'mal'}, status=status.HTTP_400_BAD_REQUEST)\n        # items_serializers = Items_OrderSerializer(data = request.data,many = True)\n        # if items_serializers.is_valid():\n        #     items_serializers.save()\n        #     return Response({'message':'Corectly created items!!!'}, status=status.HTTP_201_CREATED)",
+        "peekOfCode": "def create_items_order_api_view(request):\n    if request.method == 'POST':\n        items = request.data\n        plant = Plant.objects.filter(id = items['plant_id']).first()\n        order = Order.objects.filter(id = items['order_id']).first()\n        item = Items_Order.objects.create(\n            plant = plant,\n            order = order,\n            cost  = items['cost'],\n            qty  = items['qty']",
         "detail": "apps.Order.api.views.created_order_view",
         "documentation": {}
     },
