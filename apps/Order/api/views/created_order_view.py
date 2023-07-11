@@ -24,5 +24,5 @@ def create_items_order_api_view(request):
         items_serializers = Items_OrderSerializer(data = request.data)
         if items_serializers.is_valid():
             items_serializers.save()
-            return Response(items_serializers.data, status=status.HTTP_403)
+            return Response(items_serializers.data, status=status.HTTP_201_CREATED)
         return Response({'errors':items_serializers.errors}, status= status.HTTP_400_BAD_REQUEST)
