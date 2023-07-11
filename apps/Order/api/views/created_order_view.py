@@ -18,9 +18,11 @@ def create_order_api_view(request):
         return Response({'errors':order_serializers.errors}, status= status.HTTP_400_BAD_REQUEST)
     
 # Create items order
+@api_view(['POST'])
 def create_items_order_api_view(request):
     if request.method == 'POST':
-        items = request.data
-        plant = Plant.objects.filter(id = items['plant_id']).first()
-        order = Order.objects.filter(id = items['order_id']).first()
-        return Response({'data':request.data,'plant':plant,'order':order}, status=status.HTTP_200_OK)
+        items_serializers = Items_OrderSerializer(data = request.data)
+        if items_serializers.is_valid():
+            items_serializers.save()
+            return Response(items_serializers.data, status=status.HTTP_403)
+        return Response({'errors':items_serializers.errors}, status= status.HTTP_400_BAD_REQUEST)

@@ -957,7 +957,7 @@
         "kind": 2,
         "importPath": "apps.Order.api.views.created_order_view",
         "description": "apps.Order.api.views.created_order_view",
-        "peekOfCode": "def create_order_api_view(request):\n    if request.method == 'POST':\n        order_serializers = OrderSerializer(data = request.data)\n        items = request.data['items']\n        if order_serializers.is_valid():\n            order_serializers.save()\n            return Response({'message':'Corectly created order!!!','order_id':order_serializers.data['id'],'items':items}, status=status.HTTP_201_CREATED)\n        return Response({'errors':order_serializers.errors}, status= status.HTTP_400_BAD_REQUEST)\n# Create items order\ndef create_items_order_api_view(request):",
+        "peekOfCode": "def create_order_api_view(request):\n    if request.method == 'POST':\n        order_serializers = OrderSerializer(data = request.data)\n        items = request.data['items']\n        if order_serializers.is_valid():\n            order_serializers.save()\n            return Response({'message':'Corectly created order!!!','order_id':order_serializers.data['id'],'items':items}, status=status.HTTP_201_CREATED)\n        return Response({'errors':order_serializers.errors}, status= status.HTTP_400_BAD_REQUEST)\n# Create items order\n@api_view(['POST'])",
         "detail": "apps.Order.api.views.created_order_view",
         "documentation": {}
     },
@@ -966,7 +966,7 @@
         "kind": 2,
         "importPath": "apps.Order.api.views.created_order_view",
         "description": "apps.Order.api.views.created_order_view",
-        "peekOfCode": "def create_items_order_api_view(request):\n    if request.method == 'POST':\n        items = request.data\n        plant = Plant.objects.filter(id = items['plant_id']).first()\n        order = Order.objects.filter(id = items['order_id']).first()\n        return Response({'data':request.data,'plant':plant,'order':order}, status=status.HTTP_200_OK)",
+        "peekOfCode": "def create_items_order_api_view(request):\n    if request.method == 'POST':\n        items_serializers = Items_OrderSerializer(data = request.data)\n        if items_serializers.is_valid():\n            items_serializers.save()\n            return Response(items_serializers.data, status=status.HTTP_403)\n        return Response({'errors':items_serializers.errors}, status= status.HTTP_400_BAD_REQUEST)",
         "detail": "apps.Order.api.views.created_order_view",
         "documentation": {}
     },
