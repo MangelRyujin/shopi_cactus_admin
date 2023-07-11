@@ -20,23 +20,7 @@ def create_order_api_view(request):
 # Create items order
 def create_items_order_api_view(request):
     if request.method == 'POST':
-        # items = request.data
-        # plant = Plant.objects.filter(id = items['plant_id']).first()
-        # order = Order.objects.filter(id = items['order_id']).first()
-        # item = Items_Order.objects.create(
-        #     plant = plant,
-        #     order = order,
-        #     cost  = items['cost'],
-        #     qty  = items['qty']
-        # )
-        item_serializers = Items_OrderSerializer(data = request.data)
-        # items = request.data['items']
-        if item_serializers.is_valid():
-            item_serializers.save()
-            return Response({'message':item_serializers.data}, status=status.HTTP_200_OK)
-        return Response({'message':'mal'}, status=status.HTTP_400_BAD_REQUEST)
-        # items_serializers = Items_OrderSerializer(data = request.data,many = True)
-        # if items_serializers.is_valid():
-        #     items_serializers.save()
-        #     return Response({'message':'Corectly created items!!!'}, status=status.HTTP_201_CREATED)
-        # return Response({'errors':items_serializers.errors}, status= status.HTTP_400_BAD_REQUEST)
+        items = request.data
+        plant = Plant.objects.filter(id = items['plant_id']).first()
+        order = Order.objects.filter(id = items['order_id']).first()
+        return Response({'data':request.data,'plant':plant,'order':order}, status=status.HTTP_200_OK)
