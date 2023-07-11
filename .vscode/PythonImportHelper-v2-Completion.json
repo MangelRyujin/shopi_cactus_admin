@@ -264,14 +264,6 @@
         "documentation": {}
     },
     {
-        "label": "Items_OrderSerializer",
-        "importPath": "apps.Order.api.serializers.order_serializers",
-        "description": "apps.Order.api.serializers.order_serializers",
-        "isExtraImport": true,
-        "detail": "apps.Order.api.serializers.order_serializers",
-        "documentation": {}
-    },
-    {
         "label": "OrderSerializer",
         "importPath": "apps.Order.api.serializers.order_serializers",
         "description": "apps.Order.api.serializers.order_serializers",
@@ -353,14 +345,6 @@
     },
     {
         "label": "create_order_api_view",
-        "importPath": "apps.Order.api.views.created_order_view",
-        "description": "apps.Order.api.views.created_order_view",
-        "isExtraImport": true,
-        "detail": "apps.Order.api.views.created_order_view",
-        "documentation": {}
-    },
-    {
-        "label": "create_items_order_api_view",
         "importPath": "apps.Order.api.views.created_order_view",
         "description": "apps.Order.api.views.created_order_view",
         "isExtraImport": true,
@@ -933,7 +917,7 @@
         "kind": 2,
         "importPath": "apps.Order.api.views.created_order_view",
         "description": "apps.Order.api.views.created_order_view",
-        "peekOfCode": "def create_order_api_view(request):\n    if request.method == 'POST':\n        order_serializers = OrderSerializer(data = request.data)\n        items = request.data['items']\n        print(items)\n        if order_serializers.is_valid():\n            order_serializers.save()\n            return Response({'message':'Corectly created order!!!','order_id':order_serializers.data['id']}, status=status.HTTP_201_CREATED)\n        return Response({'errors':order_serializers.errors}, status= status.HTTP_400_BAD_REQUEST)\n# Create items order",
+        "peekOfCode": "def create_order_api_view(request):\n    if request.method == 'POST':\n        order_serializers = OrderSerializer(data = request.data)\n        items = request.data['items']\n        if order_serializers.is_valid():\n            order_serializers.save()\n            return Response({'message':'Corectly created order!!!','order_id':order_serializers.data['id'],'items':items}, status=status.HTTP_201_CREATED)\n        return Response({'errors':order_serializers.errors}, status= status.HTTP_400_BAD_REQUEST)\n# Create items order\n# def create_items_order_api_view(request):",
         "detail": "apps.Order.api.views.created_order_view",
         "documentation": {}
     },
@@ -978,7 +962,7 @@
         "kind": 5,
         "importPath": "apps.Order.api.urls",
         "description": "apps.Order.api.urls",
-        "peekOfCode": "urlpatterns = [\n    path('order/', create_order_api_view, name ='order'),\n    path('items_order/', create_items_order_api_view, name ='order'),\n]",
+        "peekOfCode": "urlpatterns = [\n    path('order/', create_order_api_view, name ='order'),\n    # path('items_order/', create_items_order_api_view, name ='order'),\n]",
         "detail": "apps.Order.api.urls",
         "documentation": {}
     },
