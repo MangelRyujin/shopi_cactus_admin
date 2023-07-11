@@ -1,10 +1,8 @@
-from rest_framework import viewsets
 from rest_framework.response import Response
 from rest_framework import status
 from rest_framework.decorators import api_view
 from apps.Order.api.serializers.order_serializers import OrderSerializer,Items_OrderSerializer
-from apps.Order.models import Items_Order,Order
-from apps.plants.models import Plant
+
 
 # Create order
 @api_view(['POST'])

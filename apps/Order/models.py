@@ -14,7 +14,6 @@ class Order(models.Model):
     user_id = models.PositiveIntegerField('Id de usuario',blank=False, null=False)
     cost = models.DecimalField('Costo', max_digits=10,  decimal_places=2, blank= False, null= False)
     
-    # TODO: Define fields here
 
     class Meta:
         """Meta definition for Order."""

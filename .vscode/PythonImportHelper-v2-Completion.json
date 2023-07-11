@@ -8,14 +8,6 @@
         "documentation": {}
     },
     {
-        "label": "viewsets",
-        "importPath": "rest_framework",
-        "description": "rest_framework",
-        "isExtraImport": true,
-        "detail": "rest_framework",
-        "documentation": {}
-    },
-    {
         "label": "status",
         "importPath": "rest_framework",
         "description": "rest_framework",
@@ -133,22 +125,6 @@
         "description": "rest_framework",
         "isExtraImport": true,
         "detail": "rest_framework",
-        "documentation": {}
-    },
-    {
-        "label": "Items_Order",
-        "importPath": "apps.Order.models",
-        "description": "apps.Order.models",
-        "isExtraImport": true,
-        "detail": "apps.Order.models",
-        "documentation": {}
-    },
-    {
-        "label": "Order",
-        "importPath": "apps.Order.models",
-        "description": "apps.Order.models",
-        "isExtraImport": true,
-        "detail": "apps.Order.models",
         "documentation": {}
     },
     {
@@ -293,38 +269,6 @@
         "description": "apps.Order.api.serializers.order_serializers",
         "isExtraImport": true,
         "detail": "apps.Order.api.serializers.order_serializers",
-        "documentation": {}
-    },
-    {
-        "label": "Plant",
-        "importPath": "apps.plants.models",
-        "description": "apps.plants.models",
-        "isExtraImport": true,
-        "detail": "apps.plants.models",
-        "documentation": {}
-    },
-    {
-        "label": "Plant",
-        "importPath": "apps.plants.models",
-        "description": "apps.plants.models",
-        "isExtraImport": true,
-        "detail": "apps.plants.models",
-        "documentation": {}
-    },
-    {
-        "label": "Category",
-        "importPath": "apps.plants.models",
-        "description": "apps.plants.models",
-        "isExtraImport": true,
-        "detail": "apps.plants.models",
-        "documentation": {}
-    },
-    {
-        "label": "Plant",
-        "importPath": "apps.plants.models",
-        "description": "apps.plants.models",
-        "isExtraImport": true,
-        "detail": "apps.plants.models",
         "documentation": {}
     },
     {
@@ -662,6 +606,30 @@
         "description": "django.apps",
         "isExtraImport": true,
         "detail": "django.apps",
+        "documentation": {}
+    },
+    {
+        "label": "Plant",
+        "importPath": "apps.plants.models",
+        "description": "apps.plants.models",
+        "isExtraImport": true,
+        "detail": "apps.plants.models",
+        "documentation": {}
+    },
+    {
+        "label": "Category",
+        "importPath": "apps.plants.models",
+        "description": "apps.plants.models",
+        "isExtraImport": true,
+        "detail": "apps.plants.models",
+        "documentation": {}
+    },
+    {
+        "label": "Plant",
+        "importPath": "apps.plants.models",
+        "description": "apps.plants.models",
+        "isExtraImport": true,
+        "detail": "apps.plants.models",
         "documentation": {}
     },
     {
@@ -1101,7 +1069,7 @@
         "kind": 6,
         "importPath": "apps.Order.models",
         "description": "apps.Order.models",
-        "peekOfCode": "class Order(models.Model):\n    \"\"\"Model definition for Order.\"\"\"\n    user_id = models.PositiveIntegerField('Id de usuario',blank=False, null=False)\n    cost = models.DecimalField('Costo', max_digits=10,  decimal_places=2, blank= False, null= False)\n    # TODO: Define fields here\n    class Meta:\n        \"\"\"Meta definition for Order.\"\"\"\n        verbose_name = 'Order'\n        verbose_name_plural = 'Orders'\n    EQUIRED_FIELDS = ['first_name','last_name','email']",
+        "peekOfCode": "class Order(models.Model):\n    \"\"\"Model definition for Order.\"\"\"\n    user_id = models.PositiveIntegerField('Id de usuario',blank=False, null=False)\n    cost = models.DecimalField('Costo', max_digits=10,  decimal_places=2, blank= False, null= False)\n    class Meta:\n        \"\"\"Meta definition for Order.\"\"\"\n        verbose_name = 'Order'\n        verbose_name_plural = 'Orders'\n    EQUIRED_FIELDS = ['first_name','last_name','email']\n    def __str__(self):",
         "detail": "apps.Order.models",
         "documentation": {}
     },
